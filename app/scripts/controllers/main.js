@@ -13,6 +13,15 @@ $scope.signin = function(isValid){
   	          $scope.list1.push(this.user.username);
   	          $scope.list2.push(this.user.password);
   	     }
+
+ $http({
+ method : 'POST',
+ url : 'http://10.0.1.37:8080//',
+ data : 'username=' + $scope.user.nam + '&email=' + $scope.user.email + '&password=' + $scope.user.pwd,
+ headers : {
+ 'Content-Type' : 'application/x-www-form-urlencoded'
+ }
+ })
   	     else{
 		alert('Enter the Complete Details');
 	}
