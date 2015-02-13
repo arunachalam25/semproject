@@ -1,31 +1,46 @@
-<p>hhhhh</p>
-<div class="ui two column middle aligned relaxed fitted stackable grid">
-  <div class="column">
-    <div class="ui form segment">
-      <div class="field">
-        <label>Username</label>
-        <div class="ui left icon input">
-          <input type="text" placeholder="Username">
-          <i class="user icon"></i>
+<style> 
+
+
+div.box {
+	
+    box-sizing: border-box;
+    width: 50%;
+    border: 1em #FFFFFF;
+    float: left;
+}
+h2 {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+}
+</style>
+
+
+
+<!--  <div class="jumbotron"> -->
+<h2> <div class="container">
+ 	<div class="box">
+  <h1>Search</h1>
+  <h3>Always a pleasure to help you.</h3>
+  <div class="nav">
+<form name="loginform" ng-submit="signin(loginform.$valid)" novalidate>
+<!-- USERNAME --> 
+ <h3>Language.</h3>
+        <div class="form-group  " ng-class="{ 'has-error' : loginform.username.$invalid && !loginform.username.$pristine }">
+            
+            <input type="text" name="username" class="form-control"  ng-model="user.username" ng- placeholder="From" required />
+            
+        </div>          
+            <!-- PASSWORD -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !loginform.password.$pristine }">
+            
+            <input type="password" name="password" class="form-control" ng-model="user.password"  placeholder="To" required />
+            
         </div>
-      </div>
-      <div class="field">
-        <label>Password</label>
-        <div class="ui left icon input">
-          <input type="password">
-          <i class="lock icon"></i>
-        </div>
-      </div>
-      <div class="ui blue submit button">Login</div>
+  <!--     </div> -->
+        <button type="submit" class="btn btn-lg btn-primary">Search <span class="glyphicon glyphicon-search"></span></button>
     </div>
+      <div style="clear:both;"></div>
   </div>
-  <div class="ui vertical divider">
-    Or
-  </div>
-  <div class="center aligned column">
-    <div class="huge green ui labeled icon button">
-      <i class="signup icon"></i>
-      Sign Up
-    </div>
-  </div>
-</div>
+        </h2>
+    </form>
