@@ -1,20 +1,20 @@
-<div class="jumbotron">
-    <div class= "l-plane">
-  <h1>Welcome</h1>
+<h1>Rate Your Favorites</h1>
   <h2>Always a pleasure to help you.</h2>
-<form name="loginform" ng-submit="signin(loginform.$valid)" novalidate>
+
+<form name="rate" ng-submit="rating(rate.$valid)" novalidate>
 <!-- USERNAME -->
-        <div class="form-group" ng-class="{ 'has-error' : loginform.username.$invalid && !loginform.username.$pristine }">
+        <div class="form-group  " ng-class="{ 'has-error' : rate.author.$invalid && !rate.author.$pristine }">
             
             <input type="text" name="username" class="form-control"  ng-model="user.username" ng- placeholder="User Name" required />
             
-        </div>
+        </div>          
             <!-- PASSWORD -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !loginform.password.$pristine }">
             
             <input type="password" name="password" class="form-control" ng-model="user.password"  placeholder="password" required />
-            </div>
+            
         </div>
+  <!--     </div> -->
         <button type="submit" class="btn btn-lg btn-primary">Sign In  <span class="glyphicon glyphicon-ok"></span></button>
         
     </form>
