@@ -1,47 +1,6 @@
-
-<!--  <div class="jumbotron"> -->
-  <h1>Welcome</h1>
-  <h2>Always a pleasure to help you.</h2>
-  <div class="nav">
-<form name="loginform" ng-submit="signin(loginform.$valid)" novalidate>
-<!-- USERNAME -->
-        <div class="form-group  " ng-class="{ 'has-error' : loginform.username.$invalid && !loginform.username.$pristine }">
-            
-            <input type="text" name="username" class="form-control"  ng-model="user.username" ng- placeholder="User Name" required />
-            
-        </div>          
-            <!-- PASSWORD -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !loginform.password.$pristine }">
-            
-            <input type="password" name="password" class="form-control" ng-model="user.password"  placeholder="password" required />
-            
-        </div>
-  <!--     </div> -->
-        <button type="submit" class="btn btn-lg btn-primary">Sign In  <span class="glyphicon glyphicon-ok"></span></button>
-        
-    </form>
-    
-
-<!-- <input type="text" ng-model="name" placeholder="Enter User Name" class="name"><br><br>
-<input type="password" ng-model="pwd" placeholder="Enter Password" class="password"><br><br>
-    <p><a class="btn .btn-xs btn-primary" ng-href="hi.html"> <span class="glyphicon glyphicon-ok">Sign in</span></a></p>
-          <h4><small>New User Then</small></h4> -->
-
-    <br><p><a class="btn btn-lg btn-danger" href="#/signup">Sign Up  <span class="glyphicon glyphicon-plus"></span></a></p>
-  </p>
-</div>
-<pre>list1={{list1}}</pre>
-<!-- <div class="container">
-  <h2>My todos</h2>
-  <!-- Todos input -->
-  <!-- <form role="form" ng-submit="addTodo()">
-    <div class="row">
-      <div class="input-group">
-        <input type="text" ng-model="todo" placeholder="What needs to be done?" class="form-control">
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Add">
-        </span>
-      </div>
-    </div>
- -->
-    
+<form ng-submit="login()">
+<input ng-model="userName" type="text">
+<input ng-model="userPass" type="password">
+<button type="submit" >submit</button>
+<p><a class="btn btn-danger" href="#/fp" > forgot <span class="glyphicon glyphicon-plus"></span></a></p>
+</form>

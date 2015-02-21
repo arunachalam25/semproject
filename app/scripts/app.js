@@ -11,14 +11,7 @@
 angular
   .module('mytodoApp', [
     'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ui.sortable'
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -32,7 +25,23 @@ angular
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
-        controller: ''
+        controller: 'contact'
+      })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'admin'
+      })
+      .when('/fp', {
+        templateUrl: 'views/fp.html',
+        controller: 'fp'
+      })
+      .when('/addauthor', {
+        templateUrl: 'views/addauthor.html',
+        controller: 'addauthor'
+      })
+      .when('/blog', {
+        templateUrl: 'views/blog.html',
+        controller: 'blog'
       })
       .otherwise({
         redirectTo: '/'

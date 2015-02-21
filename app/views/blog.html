@@ -1,0 +1,12 @@
+    <form ng-submit="blog()">
+<input ng-model="name" type="text" placeholder="Author Name">
+    Comment: <textarea ng-model="comment" cols="60" rows="3"></textarea>
+<button type="submit" >submit</button>
+</form> 
+<div ng-controller="blog">
+		<ul>
+          <li ng-repeat="entry in collection">{{entry}}</li>
+		</ul>
+
+	</div>
+ 
