@@ -1,12 +1,36 @@
 'use strict';
+
 angular.module('mytodoApp')
-  .controller('AboutCtrl', function ($scope,$location) {
-	  $scope.submitForm = function(){
-      $location.url('/contact');
+  .controller('adduser', function ($scope,$location,dataservice) {
+  	$scope.adduser = function () {
+  		var ao = {};
+  	    ao.username = $scope.name;
+  	    ao.trans_address = $scope.address;
+  	    ao.trans_email = $scope.email;
+  	    ao.trans_number = $scope.phonenumber;
+	    
+	    if (ao) {
+	      dataservice.adduser(ao).then(
+	        function (userData) {
+	        	if(userData.status =='Done')
+	        	{
+	        		alert("Added Successfully");
+	        		$location.path('/admin');
+	        	}
+	        	
+	        	
+	         
+	        },
+	        function (error) {
+	          $scope.contactError = error;
+	        }
+	      );
+	    } else {
+	      $scope.contactError = 'Username and password required';
+	    }
   };
+  
 });
-
-
 
     
   // $scope.list1 = [];

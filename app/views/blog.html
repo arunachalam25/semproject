@@ -4,9 +4,20 @@
 <button type="submit" >submit</button>
 </form> 
 <div ng-controller="blog">
-		<ul>
-          <li ng-repeat="entry in collection">{{entry}}</li>
-		</ul>
+	
+	<table>
+  <tr ng-repeat="entry in collection">
+    <td>{{ entry.username}}</td>
+       <td>{{ entry.comment}}</td>
+       <td>{{ entry.translator}}</td>
+  </tr>
+</table>	<!-- <ul>
+          <li ng-repeat="entry in collection">
+          {{entry.username}}
+          {{entry.comment}}
+          {{entry.translator}}
+          </li>
+		</ul> -->
 
 	</div>
  

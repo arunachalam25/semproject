@@ -21,7 +21,7 @@ angular
       })
       .when('/signup', {
         templateUrl: 'views/signup.html',
-        controller: 'AboutCtrl'
+        controller: 'adduser'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
@@ -42,6 +42,10 @@ angular
       .when('/blog', {
         templateUrl: 'views/blog.html',
         controller: 'blog'
+      })
+      .when('/rating', {
+        templateUrl: 'views/rating.html',
+        controller: 'author'
       })
       .otherwise({
         redirectTo: '/'

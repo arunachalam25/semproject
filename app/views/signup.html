@@ -1,5 +1,18 @@
    
-  <!-- <!--   <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+    <form ng-submit="adduser()">
+    <form ng-submit="login()">
+    <input ng-model="userName" type="text" placeholder="UserName">
+    <br><br>
+    <input ng-model="userPass" type="password" placeholder="Password">
+    <br><br>
+    <input ng-model="userno" type="number" placeholder="Mobile Number">
+    <br><br>
+     <input ng-model="email" type="text" placeholder="email">
+     <br><br>
+     <button type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
+
 
         
         
@@ -10,33 +23,26 @@
             <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
             <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
         </div> -->
-            <!-- PASSWORD -->
+         <!--    PASSWORD -->
         <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
             <label>PassWord*</label>
             <input type="password" name="password" class="form-control" ng-model="user.password"  placeholder="password" required >
             
         </div> -->
-            <!-- Userno -->
+         <!--    Userno -->
         <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.userno.$invalid && !userForm.userno.$pristine }">
             <label>Mobile Number*</label>
             <input type="number" name="userno" class="form-control" ng-model="user.userno" ng-minlength="10" ng-maxlength="10" placeholder="Mobile Number" required >
             <p ng-show="userForm.userno.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
             <p ng-show="userForm.userno.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
-        </div>
-             -->
-        <!-- EMAIL -->
-        <!-- <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+        </div -->
+            
+       <!-- EMAIL -->
+      <!--   <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
             <label>Email*</label>
             <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email Address" required >
             <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-        </div> -->
-        
-        <!-- <button type="submit" class="btn btn-primary">Submit</button>
-        
-    </form> --> 
-    <!-- <pre>list1={{list1}}</pre>
-       <pre>list2={{list2}}</pre>
-          <pre>list3={{list3}}</pre>
-             <pre>list4={{list4}}</pre>
+        </div>
+         --> 
+         
     
-    -->

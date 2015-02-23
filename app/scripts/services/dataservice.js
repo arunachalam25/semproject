@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('mytodoApp')
-  .factory('dataservice', function ($location,$http,$q) {
+  .factory('dataservice', function ($location,$http,$q,$window) {
     var authenticatedauthor = null;
     var authortrans = null;
     var user = null;
     var authenticatedUser = null;
     var tk = null ;
+    var accessData = null;
+    var authors = null;
     var apiUrl = 'http://10.0.1.7:8081/';
     return {
          
@@ -25,8 +27,8 @@ angular.module('mytodoApp')
               }).success(function(userData) {
                     authenticatedUser = userData;
                     console.log(userData);
-                    tk = userData.token;
-                    console.log(tk);
+                    $window.localStorage.tk = userData.token;
+                    console.log(accessData);
                     deferred.resolve(authenticatedUser);
 
               }).error(function(error) {
@@ -61,14 +63,14 @@ angular.module('mytodoApp')
 
          contact: function(ao)
         {
-          ao.tk = tk;
+          ao.tk =$window.localStorage.tk;
           var json1 = JSON.stringify(ao);
           console.log(ao);
             var deferred = $q.defer();
 
             $http({
                   method  : 'POST',
-                  url     : apiUrl+'search1/',
+                  url     : apiUrl+'searchtrans/',
                   data    : json1,
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {
@@ -103,7 +105,7 @@ angular.module('mytodoApp')
         },
          addauthor: function(ao)
         {
-          ao.token = tk;
+          ao.token = $window.localStorage.tk;
           var json1 = JSON.stringify(ao);
           console.log(ao);
             var deferred = $q.defer();
@@ -125,7 +127,7 @@ angular.module('mytodoApp')
         },
         blog: function(ao)
         {
-          ao.token = tk;
+          ao.token = $window.localStorage.tk;
           var json1 = JSON.stringify(ao);
           console.log(ao);
             var deferred = $q.defer();
@@ -136,7 +138,7 @@ angular.module('mytodoApp')
                   data    : json1,
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {
-                    authenticatedauthor = userData.username;
+                    authenticatedauthor = userData;
                     
                     console.log(authenticatedauthor);
                     deferred.resolve(authenticatedauthor);
@@ -147,6 +149,72 @@ angular.module('mytodoApp')
               return deferred.promise;
         },
 
+        adduser: function(ao)
+        {
+         
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'adminaddtrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData.status);
+                    deferred.resolve(authenticatedauthor);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+
+ 
+ 
+        author: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayall/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+      
+         rating: function(ao)
+        {
+          ao.token = $window.localStorage.tk;
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'rating/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
 
 
     }

@@ -11,10 +11,10 @@ angular.module('mytodoApp')
 	    if (ao) {
 	      dataservice.blog(ao).then(
 	        function (userData) {
-	        	obj = JSON.parse(userData);
+	        	//obj = JSON.parse(userData);
 
 
-	        	$scope.collection = obj;
+	        	$scope.collection = userData;
 	        },
 	        function (error) {
 	          $scope.contactError = error;

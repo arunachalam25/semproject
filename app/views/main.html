@@ -1,6 +1,10 @@
 <form ng-submit="login()">
-<input ng-model="userName" type="text">
-<input ng-model="userPass" type="password">
-<button type="submit" >submit</button>
-<p><a class="btn btn-danger" href="#/fp" > forgot <span class="glyphicon glyphicon-plus"></span></a></p>
+	<input ng-model="userName" type="text" placeholder="UserName">
+	<br><br>
+	<input ng-model="userPass" type="password" placeholder="Password">
+	<br><br>
+	
+	<button type="submit" class="btn btn-success" >SignIn</button>
+	<br><br><p><a  href="#/fp" > Forgot Password </a></p>
+	<p><a class="btn btn-danger" href="#/signup" > New User SignUp <span class="glyphicon glyphicon-plus"></span></a></p>
 </form>
