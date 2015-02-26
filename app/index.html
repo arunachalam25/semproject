@@ -8,7 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/Semantic-UI-1.10.2/dist/semantic.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -34,15 +34,16 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Translator Info</a>
+            <a class="navbar-brand" href="#/aboutus">About US</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MainCtrl">
 
             <ul class="nav navbar-nav">
               
               
-              <li><a href="#/contact">Contact Us</a></li>
+              <li><a href="#/contactus">Contact Us</a></li>
+              <li ng-if="!vari"><a ng-click="logout()" href="#/">LogOUt</a></li>
             </ul>
           </div>
         </div>
@@ -101,6 +102,12 @@
         <script src="scripts/controllers/logout.js"></script>
         <script src="scripts/controllers/blog.js"></script>
         <script src="scripts/controllers/rating.js"></script>
+        <script src="scripts/controllers/edit.js"></script>
+        <script src="scripts/controllers/del.js"></script>
+        <script src="scripts/controllers/edituser.js"></script>
+        <script src="scripts/controllers/deluser.js"></script>
+        <script src="scripts/controllers/contactus.js"></script>
+        <script src="scripts/controllers/aboutus.js"></script>
         <!-- endbuild -->
 </body>
 </html>

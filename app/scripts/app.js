@@ -27,9 +27,18 @@ angular
         templateUrl: 'views/contact.html',
         controller: 'contact'
       })
+      .when('/aboutus', {
+        templateUrl: 'views/aboutus.html',
+        controller: 'aboutus'
+      })
+      
       .when('/admin', {
         templateUrl: 'views/admin.html',
         controller: 'admin'
+      })
+       .when('/contactus', {
+        templateUrl: 'views/contactus.html',
+        controller: 'contactus'
       })
       .when('/fp', {
         templateUrl: 'views/fp.html',
@@ -46,6 +55,30 @@ angular
       .when('/rating', {
         templateUrl: 'views/rating.html',
         controller: 'author'
+      })
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'adduser'
+      })
+       .when('/signup1', {
+        templateUrl: 'views/signup1.html',
+        controller: 'adduser'
+      })
+       .when('/edit', {
+        templateUrl: 'views/edit.html',
+        controller: 'edit'
+      })
+       .when('/del', {
+        templateUrl: 'views/del.html',
+        controller: 'delete'
+      })
+       .when('/edituser', {
+        templateUrl: 'views/edituser.html',
+        controller: 'edit1'
+      })
+       .when('/deluser', {
+        templateUrl: 'views/deluser.html',
+        controller: 'delete1'
       })
       .otherwise({
         redirectTo: '/'

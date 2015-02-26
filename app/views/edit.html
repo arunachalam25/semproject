@@ -1,0 +1,28 @@
+<form ng-submit="edit()">
+	
+		<div data-ng-init="edittrans()">
+					<b>Select Author:</b> <select ng-model = "authorname"  >
+						<option value="authorname">-- Select Persons --</option>
+						<option data-ng-repeat="entry in collection" value="{{entry.trans_name}}">{{entry.trans_name}}</option>
+					</select>
+
+ 
+               
+		</div>
+
+				<button type="submit" class="btn btn-success" >Submit</button>
+</form>
+	
+<div ng-controller="edit">
+<form ng-submit="save()">
+	
+  		<!-- <div ng-repeat="entry in collection1"> -->
+  			<input ng-model="collection1[0].trans_name" id="trans_name" name="trans_name" value="collection1.trans_name" type="text" ><br>
+  			<input ng-model="collection1[0].trans_from" id="trans_name" type="text" ><br>
+  			<input ng-model="collection1[0].trans_to"  type="text" ><br>
+  			<input ng-model="collection1[0].trans_number"  type="text" ><br>
+  			<input ng-model="collection1[0].trans_address"  type="text" ><br>
+  		<!-- </div> -->
+    	<button type="submit" class="btn btn-save" >Save The Changes</button>		
+	</div>
+</form>

@@ -1,18 +1,79 @@
 <html ng-app="mytodoApp">
-	<form ng-submit="contact()">
-		<input ng-model="from" type="text" placeholder="From">
-		<input ng-model="to" type="text" placeholder="To">
-			<button type="submit" >submit</button>
-	</form>
-	<form ng-submit="logout()">
-	<p><button type="submit"> logout</button> <span class="glyphicon glyphicon-plus"></span></a></p>
-	<p><a class="btn btn-danger" href="#/blog" > Review <span class="glyphicon glyphicon-plus"></span></a></p>
-	<p><a class="btn btn-danger" href="#/rating" > Review <span class="glyphicon glyphicon-plus"></span></a></p>
-    </form>
+<style> 
+
+
+div.box {
+
+ box-sizing: border-box;
+ width: 50%;
+ border: 1em#FFFFFF;
+ float: left;
+}
+h2 {
+ position: absolute;
+ left: 10px;
+ top: 50px;
+}
+</style>
+
+		<form ng-submit="contact()">
+		 <div class="container">
+         <div class="box">
+			<input ng-model="from" type="text" placeholder="From">
+			<input ng-model="to" type="text" placeholder="To">
+			<button type="submit" >Search</button>
+
+		</form>
+	
+		<p><a class="btn btn-danger" href="#/blog" > Review <span class="glyphicon glyphicon-plus"></span></a></p>
+		<p><a class="btn btn-danger" href="#/rating" > Rate <span class="glyphicon glyphicon-plus"></span></a></p>
+		</div>
+			</div>
 	<div ng-controller="contact">
-		<ul>
-          <li ng-repeat="entry in collection">{{entry}}</li>
-		</ul>
+    	<table>
+  			<tr ng-repeat="entry in collection">
+    		<td>   {{entry.trans_name}}</td>
+       		<td>   {{entry.trans_from}}</td>
+       		<td>   {{entry.trans_to}}</td>
+       		<td>   {{entry.trans_address}}</td>
+       		<td>   {{entry.ratevalue}}</td>
+  			</tr>
+		</table>
+	
+	
 
 	</div>
 </html>
+
+
+
+
+
+
+<!-- <!— <div class="jumbotron"> —>
+<h2> <div class="container">
+ <div class="box">
+ <h1>Search</h1>
+ <h3>Always a pleasure to help you.</h3>
+ <div class="nav">
+<form name="loginform" ng-submit="signin(loginform.$valid)" novalidate>
+<!— USERNAME —> 
+ <h3>Language.</h3>
+ <div class="form-group " ng-class="{ 'has-error' : loginform.username.$invalid && !loginform.username.$pristine }">
+
+ <input type="text" name="username" class="form-control" ng-model="user.username" ng- placeholder="From" required />
+
+ </div> 
+ <!— PASSWORD —>
+ <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !loginform.password.$pristine }">
+
+ <input type="password" name="password" class="form-control" ng-model="user.password" placeholder="To" required />
+
+ </div>
+ <!— </div> —>
+ <button type="submit" class="btn btn-lg btn-primary">Search <span class="glyphicon glyphicon-search"></span></button>
+ </div>
+ <div style="clear:both;"></div>
+ </div>
+ </h2>
+ </form> -->

@@ -4,10 +4,10 @@ angular.module('mytodoApp')
   .controller('adduser', function ($scope,$location,dataservice) {
   	$scope.adduser = function () {
   		var ao = {};
-  	    ao.username = $scope.name;
-  	    ao.trans_address = $scope.address;
-  	    ao.trans_email = $scope.email;
-  	    ao.trans_number = $scope.phonenumber;
+  	    ao.username = $scope.userName;
+  	    ao.password = $scope.userPass;
+  	    ao.phonenumber = $scope.userno;
+  	    ao.email = $scope.email;
 	    
 	    if (ao) {
 	      dataservice.adduser(ao).then(
@@ -17,7 +17,21 @@ angular.module('mytodoApp')
 	        		alert("Added Successfully");
 	        		$location.path('/admin');
 	        	}
-	        	
+	        	if(userData.status =='usernameexists')
+	        	{
+	        		alert("this user name already exists select another");
+	        		$location.path('/signup');
+	        	}
+	        	if(userData.status =='emailexists')
+	        	{
+	        		alert("This EmailId Aleardy Registered ");
+	        		$location.path('/signup');
+	        	}
+	        	if(userData.status =='phone')
+	        	{
+	        		alert("This Mobile Number Already Registered ");
+	        		$location.path('/signup');
+	        	}
 	        	
 	         
 	        },
@@ -25,9 +39,46 @@ angular.module('mytodoApp')
 	          $scope.contactError = error;
 	        }
 	      );
-	    } else {
-	      $scope.contactError = 'Username and password required';
-	    }
+	    } 
+  };
+  		$scope.adduser1 = function () {
+  		var ao = {};
+  	    ao.username = $scope.userName;
+  	    ao.password = $scope.userPass;
+  	    ao.phonenumber = $scope.userno;
+  	    ao.email = $scope.email;
+	    
+	    if (ao) {
+	      dataservice.adduser(ao).then(
+	        function (userData) {
+	        	if(userData.status =='Done')
+	        	{
+	        		alert("Added Successfully");
+	        		$location.path('/main');
+	        	}
+	        	if(userData.status =='usernameexists')
+	        	{
+	        		alert("this user name already exists select another");
+	        		$location.path('/signup');
+	        	}
+	        	if(userData.status =='emailexists')
+	        	{
+	        		alert("This EmailId Aleardy Registered ");
+	        		$location.path('/signup');
+	        	}
+	        	if(userData.status =='phone')
+	        	{
+	        		alert("This Mobile Number Already Registered ");
+	        		$location.path('/signup');
+	        	}
+	        	
+	         
+	        },
+	        function (error) {
+	          $scope.contactError = error;
+	        }
+	      );
+	    } 
   };
   
 });

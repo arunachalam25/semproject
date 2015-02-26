@@ -11,7 +11,7 @@ angular.module('mytodoApp')
 	    if (ao) {
 	      dataservice.contact(ao).then(
 	        function (authortrans) {
-	        	$scope.collection = [authortrans];
+	        	$scope.collection = authortrans;
 	        	
 	        	
 	         

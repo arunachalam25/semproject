@@ -20,18 +20,33 @@ angular.module('mytodoApp')
 	        		alert("Hi Admin");
 	        		$location.path('/admin');
 	        	}
-	        	else{
-	        		 $location.path('/contact');
+	        	if(userData.status =='Done')
+	        	{
+	        		
+	        		$location.path('/contact');
 	        	}
+	        	
 	         
 	        },
 	        function (error) {
 	          $scope.loginError = error;
 	        }
 	      );
-	    } else {
+	    } 
+	    else {
 	      $scope.loginError = 'Username and password required';
 	    }
+
   };
+  	$scope.vari1=localStorage.tk ;
+ 	if($scope.vari1 == 'undefined')
+ 		$scope.vari=true;
+ 	else
+ 		$scope.vari=false;
+ $scope.logout = function() {
+ 		localStorage.tk = 'undefined';
+ 		window.location.reload();
+
+ }
   
 });

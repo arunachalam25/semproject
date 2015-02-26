@@ -9,7 +9,8 @@ angular.module('mytodoApp')
     var tk = null ;
     var accessData = null;
     var authors = null;
-    var apiUrl = 'http://10.0.1.7:8081/';
+    var user = null;
+    var apiUrl = 'http://anirudhram.pythonanywhere.com/';
     return {
          
         login: function(uo)
@@ -28,6 +29,8 @@ angular.module('mytodoApp')
                     authenticatedUser = userData;
                     console.log(userData);
                     $window.localStorage.tk = userData.token;
+                        window.location.reload();
+
                     console.log(accessData);
                     deferred.resolve(authenticatedUser);
 
@@ -38,28 +41,28 @@ angular.module('mytodoApp')
         },
 
 
-        logout: function()
-        {
-          ao.tk = tk;
-          var json1 = JSON.stringify(ao);
-          console.log(ao);
+        // logout: function()
+        // {
+        //   ao.tk = tk;
+        //   var json1 = JSON.stringify(ao);
+        //   console.log(ao);
 
-            var deferred = $q.defer();
-            $http({
-                method  : 'POST',
-                url     : apiUrl+'logout/',
-                data    : json1,
-                headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*'  }
-            }).success(function(user)
-              {
-                authenticatedUser = null;
-                deferred.resolve(user);
-              }).error(function(error)
-              {
-                deferred.reject(error);
-              });
-              return deferred.promise;
-        },
+        //     var deferred = $q.defer();
+        //     $http({
+        //         method  : 'POST',
+        //         url     : apiUrl+'logout/',
+        //         data    : json1,
+        //         headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*'  }
+        //     }).success(function(user)
+        //       {
+        //         authenticatedUser = null;
+        //         deferred.resolve(user);
+        //       }).error(function(error)
+        //       {
+        //         deferred.reject(error);
+        //       });
+        //       return deferred.promise;
+        // },
 
          contact: function(ao)
         {
@@ -125,6 +128,51 @@ angular.module('mytodoApp')
               });
               return deferred.promise;
         },
+      
+          save: function(ao)
+        {
+         
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'savetrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData.status);
+                    deferred.resolve(authenticatedauthor);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+        save1: function(ao)
+        {
+         
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'saveuser/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData.status);
+                    deferred.resolve(authenticatedauthor);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
         blog: function(ao)
         {
           ao.token = $window.localStorage.tk;
@@ -158,13 +206,13 @@ angular.module('mytodoApp')
 
             $http({
                   method  : 'POST',
-                  url     : apiUrl+'adminaddtrans/',
+                  url     : apiUrl+'signup/',
                   data    : json1,
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {
-                    authenticatedauthor = userData;
+                    user = userData;
                     console.log(userData.status);
-                    deferred.resolve(authenticatedauthor);
+                    deferred.resolve(userData);
 
               }).error(function(error) {
                     deferred.error(error);
@@ -192,6 +240,213 @@ angular.module('mytodoApp')
            });
           return deferred.promise;
      },
+        edittrans: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayall/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+      deletetrans: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayall/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     deleteuser: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayuser/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     edituser: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayuser/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     remove: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'adminremovetrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+        remove1: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'adminremoveuser/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+        edit: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'edittrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+
+         edit1: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'displayuser/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+         delete: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'edittrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+         delete1: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+          var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'displayuser/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+      
+      
       
          rating: function(ao)
         {

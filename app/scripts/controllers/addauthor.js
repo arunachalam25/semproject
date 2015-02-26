@@ -27,9 +27,8 @@ angular.module('mytodoApp')
 	          $scope.contactError = error;
 	        }
 	      );
-	    } else {
-	      $scope.contactError = 'Username and password required';
-	    }
+	    } 
   };
+  
   
 });

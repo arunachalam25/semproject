@@ -1,0 +1,25 @@
+<form ng-submit="delete1()">
+	
+		<div data-ng-init="deleteuser()">
+					<b>Select User:</b> <select ng-model = "username"  >
+						<option value="username">-- Select Persons --</option>
+						<option data-ng-repeat="entry in collection" value="{{entry.username}}">{{entry.username}}</option>
+					</select>
+
+ 
+               
+		</div>
+
+				<button type="submit" class="btn btn-success" >Submit</button>
+</form>
+	
+<div ng-controller="delete1">
+<form ng-submit="remove1()">
+	
+  			<input ng-model="collection1[0].username" type="text" ><br>
+  			<input ng-model="collection1[0].phonenumber"  type="text" ><br>
+  			<input ng-model="collection1[0].email"  type="text" ><br>
+  			
+    	<button type="submit" class="btn btn-save" >Remove The User</button>		
+	</div>
+</form>
