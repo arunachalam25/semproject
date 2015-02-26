@@ -10,6 +10,7 @@ angular.module('mytodoApp')
     var accessData = null;
     var authors = null;
     var user = null;
+    var trans = null;
     var apiUrl = 'http://anirudhram.pythonanywhere.com/';
     return {
          
@@ -29,9 +30,12 @@ angular.module('mytodoApp')
                     authenticatedUser = userData;
                     console.log(userData);
                     $window.localStorage.tk = userData.token;
-                        window.location.reload();
+                    $window.localStorage.trans = userData.transname;
+
+                     window.location.reload();
 
                     console.log(accessData);
+                    console.log($window.localStorage.trans);
                     deferred.resolve(authenticatedUser);
 
               }).error(function(error) {
@@ -80,6 +84,28 @@ angular.module('mytodoApp')
                     authortrans = userData;
                     console.log(userData.trans_name);
                     deferred.resolve(authortrans);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+         transdet: function(ao)
+        {
+          ao.trans =$window.localStorage.trans;
+          var json1 = JSON.stringify(ao);
+          console.log(ao.trans);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'edittrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authortrans = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
 
               }).error(function(error) {
                     deferred.error(error);
@@ -173,6 +199,29 @@ angular.module('mytodoApp')
               });
               return deferred.promise;
         },
+        save2: function(ao)
+        {
+         
+          var json1 = JSON.stringify(ao);
+          console.log("hello");
+          console.log(ao);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'savetrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData.status);
+                    deferred.resolve(authenticatedauthor);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
         blog: function(ao)
         {
           ao.token = $window.localStorage.tk;
@@ -251,6 +300,42 @@ angular.module('mytodoApp')
               authors = userData;
               console.log(userData);
               deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+         trans: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayall/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     details: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayall/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(userData);
 
           }).error(function (error) {
             deferred.error(error);

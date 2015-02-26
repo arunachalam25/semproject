@@ -15,6 +15,13 @@ angular.module('mytodoApp')
 	        		alert("Invalid Login");
 					$location.path('/main');
 	        	}
+	        	if (userData.status =='translator')
+	        	{
+	        		alert("Hi");
+					$location.path('/trans');
+	        	}
+	        	
+
 	        	if(userData.status =='admin')
 	        	{
 	        		alert("Hi Admin");

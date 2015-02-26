@@ -40,6 +40,10 @@ angular
         templateUrl: 'views/contactus.html',
         controller: 'contactus'
       })
+       .when('/trans', {
+        templateUrl: 'views/trans.html',
+        controller: 'trans'
+      })
       .when('/fp', {
         templateUrl: 'views/fp.html',
         controller: 'fp'

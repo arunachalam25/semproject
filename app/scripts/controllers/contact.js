@@ -2,6 +2,24 @@
 
 angular.module('mytodoApp')
   .controller('contact', function ($scope,$location,dataservice) {
+  	
+$scope.details = function () {
+
+
+	     
+	      dataservice.details().then(
+	        function (userData) {
+	        	//obj = JSON.parse(userData);
+
+
+	        	$scope.collection1 = userData;
+	        },
+	        function (error) {
+	          $scope.contactError = error;
+	        }
+	      );
+	  };
+
   	$scope.contact = function () {
   		var ao = {};
   	    
@@ -16,13 +34,13 @@ angular.module('mytodoApp')
 	        	
 	         
 	        },
+
 	        function (error) {
 	          $scope.contactError = error;
 	        }
 	      );
-	    } else {
-	      $scope.contactError = 'Username and password required';
-	    }
+	    } 
+
   };
   
 });
