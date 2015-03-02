@@ -1,53 +1,97 @@
 <html ng-app="mytodoApp">
+<style type="text/css">
+    .divider{
+    position:absolute;
+    left:50%;
+    top:10%;
+    bottom:10%;
+    border-left:1px solid white;
+}
+</style>
 
-<div ng-controller="contact">
+<div ng-show="!v" class="login" id="login" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: #cccc33; width: 730px; padding: 30px; color: black; border: #0000cc 2px dashed; ">
+
+        <div ng-controller="contact">
 
 
 
 			<div data-ng-init="details()">
+			 <!-- <div class="ui grid">
+	           <div class="four wide column"> Name</div>
+                <div class="four wide column">From</div>
+                <div class="four wide column"> To</div>
+                <div class="four wide column"> Address</div>
+             </div> -->
 			
-			
-			<div class="ui grid" ng-repeat="entry in collection1">
-    <div class="four wide column"> {{entry.trans_name}}</div>
-    <div class="four wide column">{{entry.trans_from}}</div>
-    <div class="four wide column"> {{entry.trans_to}}</div>
-    <div class="four wide column"> {{entry.trans_address}}</div>
-</div>
+			 <div class="ui grid" ng-repeat="entry in collection1">
+                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3>Mobile:{{entry.trans_number}}</div>
+                <div class="four wide column"><h3><b>Translation:</b></h3> {{entry.trans_from}} - {{entry.trans_to}} </div>
+                
+                </div>
 
     			
 
 			</div>
-			</div>
+		</div>
+</div>
+<div class="login1" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 100px; background-color: #cccc33; width: 300px; height: 600px;padding: 20px; color: black; border: #0000cc 2px dashed; ">
 	
-		<form ng-submit="contact()">
+    <form name="contact1" ng-submit="contact()">
 			
-			<input ng-model="from" type="text" placeholder="From">
-			<input ng-model="to" type="text" placeholder="To">
-			<button type="submit" >Search</button> 
+        <div class="form-group" ng-class="{ 'has-error' : contact1.from.$invalid && !contact1.from.$pristine }">
+        <h3><b>Language:</b></h3>
+        <input type="text" name="from" class="form-control"  ng-model="from"  placeholder="From" required >
+            
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : contact1.to.$invalid && !contact1.to.$pristine }">
+            
+            <input type="text" name="to" class="form-control"  ng-model="to" placeholder="To" required >
+            
+        </div>
+			
+            <button type="submit" class="btn btn-success ">Search<span class="glyphicon glyphicon-search"></span></button><br><br>
+		
 
-	
+	<a class="btn btn-danger" href="#/blog" > Review <span class="glyphicon glyphicon-plus"></span></a><br><br>
+	<a class="btn btn-danger" href="#/rating" > Rate <span class="glyphicon glyphicon-star"></span></a>
+		
 		
 		</form>
 		</div>
 		</div>
 
-		<p><a class="btn btn-danger" href="#/blog" > Review <span class="glyphicon glyphicon-plus"></span></a></p>
-		<p><a class="btn btn-danger" href="#/rating" > Rate <span class="glyphicon glyphicon-plus"></span></a></p>
 		
+</div>
+<div  ng-show="v" class="login2" id="login2" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: #cccc33; width: 730px; padding: 30px; color: black; border: #0000cc 2px dashed; ">
 			<div ng-controller="contact">
-    			<table>
-  					<tr ng-repeat="entry in collection">
-    				<td>   {{entry.trans_name}}</td>
-       				<td>   {{entry.trans_from}}</td>
-       				<td>   {{entry.trans_to}}</td>
-       				<td>   {{entry.trans_address}}</td>
-       				<td>   {{entry.ratevalue}}</td>
-  					</tr>
-				</table>
+    			
+			<!--  <div class="ui grid">
+	           <div class="five wide column"> Name</div>
+                <div class="two wide column">From</div>
+                <div class="two wide column"> To</div>
+                <div class="six wide column"> Address</div>
+                <div class="one wide column"> Rating</div>
+            </div> -->
+			<div class="ui grid" ng-repeat="entry in collection">
+                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3>Mobile:{{entry.trans_number}}<b>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></div>
+                <div class="four wide column"><h3><b>Translation:</b></h3> {{entry.trans_from}} - {{entry.trans_to}} </div>
+                <!-- <div class="two wide column">{{entry.trans_from}}</div>
+                <div class="two wide column"> {{entry.trans_to}}</div>
+                <div class="five wide column"> {{entry.trans_address}}</div> -->
+                <!-- <div class="two wide column"> {{entry.ratevalue}}<span class="glyphicon glyphicon-star"></div> -->
+            </div>
 	
-	
+	       </div>
 
-			</div>
+</div>
+<div class="login" id="login" style="z-index: 2; position: absolute; left: 933px auto; right: 0px; top: 100px; background-color: #cccc33; width: 300px; height: 600px; padding: 0px; color: black; border: #0000cc 2px dashed; ">
+<a class="twitter-timeline" href="https://twitter.com/hashtag/translators" data-widget-id="572373836926943232">#translators Tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+     
+
+     </div>
+
+
 </html>
 
 

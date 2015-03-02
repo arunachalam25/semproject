@@ -3,11 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
+ 
+  
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -17,14 +14,14 @@
     
     <!-- endbuild -->
   </head>
-  <body ng-app="mytodoApp">
+  <body ng-app="mytodoApp" >
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar navbar-default" role="navigation"  style="background-color:#003399; layer-background-color:#003399; visibility: visible">
         <div class="container">
           <div class="navbar-header">
 
@@ -35,7 +32,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/aboutus">About US</a>
+            <a class="navbar-brand"  href="#/aboutus" ><font color="red">About Us</font></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MainCtrl">
@@ -43,8 +40,8 @@
             <ul class="nav navbar-nav">
               
               
-              <li><a href="#/contactus">Contact Us</a></li>
-              <li ng-if="!vari"><a ng-click="logout()" href="#/">LogOUt</a></li>
+              <li><a href="#/contactus"><font color="red" size="4">Contact Us</font></a></li>
+              <li ng-if="!vari"><a ng-click="logout()" href="#/"><font color="red" size="4">LogOut</span></font></a></li>
             </ul>
           </div>
         </div>

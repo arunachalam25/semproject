@@ -15,7 +15,7 @@ angular.module('mytodoApp')
 	        	if(userData.status =='Done')
 	        	{
 	        		alert("Added Successfully");
-	        		$location.path('/admin');
+	        		$location.path('/');
 	        	}
 	        	if(userData.status =='usernameexists')
 	        	{
@@ -54,7 +54,7 @@ angular.module('mytodoApp')
 	        	if(userData.status =='Done')
 	        	{
 	        		alert("Added Successfully");
-	        		$location.path('/main');
+	        		$location.path('/admin');
 	        	}
 	        	if(userData.status =='usernameexists')
 	        	{

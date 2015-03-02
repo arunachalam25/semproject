@@ -1,25 +1,30 @@
-<form ng-submit="delete1()">
+<div class="login" id="login" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+<h2><b>Delete User:</b></h2>
+<form ng-submit="delete1()" class="form-inline">
 	
 		<div data-ng-init="deleteuser()">
-					<b>Select User:</b> <select ng-model = "username"  >
+					<b>Select User:</b> <select ng-model = "username"class="form-control">
 						<option value="username">-- Select Persons --</option>
 						<option data-ng-repeat="entry in collection" value="{{entry.username}}">{{entry.username}}</option>
 					</select>
 
  
-               
+               <button type="submit" class="btn btn-success" >GO</button>
 		</div>
 
-				<button type="submit" class="btn btn-success" >Submit</button>
+				
 </form>
+
 	
 <div ng-controller="delete1">
 <form ng-submit="remove1()">
-	
-  			<input ng-model="collection1[0].username" type="text" ><br>
-  			<input ng-model="collection1[0].phonenumber"  type="text" ><br>
-  			<input ng-model="collection1[0].email"  type="text" ><br>
+			<br><label><b>User Name:</b></label>
+  			<br><input class="form-control" ng-model="collection1[0].username" type="text" ><br>
+  			<br><label><b>Mobile Number:</b></label>
+  			<input class="form-control" ng-model="collection1[0].phonenumber"  type="text" ><br><br><label><b>Email ID:</b></label>
+  			<input class="form-control" ng-model="collection1[0].email"  type="text" ><br>
   			
-    	<button type="submit" class="btn btn-save" >Remove The User</button>		
+    	<button type="submit" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span> Remove The User</button>		
 	</div>
 </form>
+</div>

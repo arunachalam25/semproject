@@ -19,6 +19,11 @@ angular.module('mytodoApp')
 	        		alert("Added Successfully");
 	        		$location.path('/admin');
 	        	}
+	        	else{
+	        		alert("Already Registered");
+	        		$location.path('/addauthor');
+	        		
+	        	}
 	        	
 	        	
 	         

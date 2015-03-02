@@ -1,9 +1,51 @@
-<form ng-submit="addauthor()">
-<input ng-model="name" type="text" placeholder="Name">
-<input ng-model="address" type="text" placeholder="Address">
-<input ng-model="phonenumber" type="number" placeholder="Mobile Number">
-<input ng-model="email" type="text" placeholder="email ID">
-<input ng-model="from" type="text" placeholder="From">
-<input ng-model="to" type="text" placeholder="To">
-<button type="submit" >submit</button>
+ <div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+<form ng-submit="addauthor()" name="addauthor1">
+<h2>Add Translator:</h2>
+<!-- Trans Name -->
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.name.$invalid && !addauthor1.name.$pristine }">
+            
+            <input type="text" name="name" class="form-control"  ng-model="name"  placeholder="Translator Name" required >
+           
+        </div>
+<!-- <input class="form-control" ng-model="name" type="text" placeholder="Name"><br> -->
+<!-- <input class="form-control" ng-model="address" type="text" placeholder="Address"><br> -->
+<!-- Address -->
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.address.$invalid && !addauthor1.address.$pristine }">
+            
+            <input type="text" name="address" class="form-control"  ng-model="address"  placeholder="Address" required >
+           
+        </div>
+ <!--    Phone Number -->
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.phonenumber.$invalid && !addauthor1.phonenumber.$pristine }">
+            
+           <input type="number" name="phonenumber" class="form-control" ng-model="phonenumber" ng-minlength="10" ng-maxlength="10" placeholder="Mobile Number" required >
+            <p ng-show="addauthor1.phonenumber.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
+            <p ng-show="addauthor1.phonenumber.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
+        </div>
+<!-- <input  class="form-control" ng-model="phonenumber" type="number" placeholder="Mobile Number"><br> -->
+<!-- <input class="form-control" ng-model="email" type="text" placeholder="email ID"><br> -->
+ <!-- EMAIL -->
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.email.$invalid && !addauthor1.email.$pristine }">
+            
+            <input type="email" name="email" class="form-control" ng-model="email" placeholder="Email Address" required >
+            <p ng-show="addauthor1.email.$invalid && !addauthor1.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+<!-- <input class="form-control" ng-model="from" type="text" placeholder="From"><br> -->
+<!-- From-->
+       <label><b>Language: </b></label>
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.from.$invalid && !addauthor1.from.$pristine }">
+            
+            <input type="text" name="from" class="form-control"  ng-model="from"  placeholder="From" required >
+           
+        </div>
+<!-- <input class="form-control" ng-model="to" type="text" placeholder="To"><br> -->
+<!-- To-->
+      
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.to.$invalid && !addauthor1.to.$pristine }">
+            
+            <input type="text" name="to" class="form-control"  ng-model="to"  placeholder="To" required >
+           
+        </div>
+<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Submit</button>
 </form>
+</div>

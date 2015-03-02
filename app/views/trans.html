@@ -1,15 +1,32 @@
-
 <div ng-controller="trans">
+<div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+<h2><b>Edit Your Profile</b></h2>
+
 <div data-ng-init="transdet()">
 
-<form ng-submit="save2()">
-	
-  			<input ng-model="collection1[0].trans_name" type="text" ><br>
-  			<input ng-model="collection1[0].trans_number"  type="text" ><br>
-  			<input ng-model="collection1[0].trans_address"  type="text" ><br>
-  			<input ng-model="collection1[0].trans_from"  type="text" ><br>
-  			<input ng-model="collection1[0].trans_to"  type="text" ><br>
+<form ng-submit="save2()" name="addauthor1">
+			<br><label><b>Your Name:</b></label>
+  			<input class="form-control" ng-model="collection1[0].trans_name" type="text" readonly="readonly" ><h6>You Cant Change Your Name</h6><br>
+
+  			<br><label><b>Mobile Number:</b></label>
+
+  			 <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_number.$invalid && !addauthor1.trans_number.$pristine }">
+  			<input type="text" class="form-control" ng-model="collection1[0].trans_number"  minlength="10" ng-maxlength="10">
+  			<p ng-show="adduser2.userno.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
+            <p ng-show="adduser2.userno.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
+            </div>
   			
-    	<button type="submit" class="btn btn-save" >Save The Changes</button>		
+     <br>
+  			<br><label><b>Address:</b></label>
+  			<input class="form-control" ng-model="collection1[0].trans_address"  type="text" required><br>
+  			<br><label><b>Language:</b></label>
+  			<br><label>From:</label>
+  			<input class="form-control" ng-model="collection1[0].trans_from"  type="text"
+  			required ><br>
+  			<br><label>To:</label>
+  			<input class="form-control" ng-model="collection1[0].trans_to"  type="text" required ><br>
+  			
+    	<button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-disk"></span>  Save The Changes </button>			
 	</div>
 </form>
+</div>

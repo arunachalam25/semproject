@@ -11,6 +11,7 @@ angular.module('mytodoApp')
     var authors = null;
     var user = null;
     var trans = null;
+    var id = null;
     var apiUrl = 'http://anirudhram.pythonanywhere.com/';
     return {
          
@@ -92,9 +93,9 @@ angular.module('mytodoApp')
         },
          transdet: function(ao)
         {
-          ao.trans =$window.localStorage.trans;
+          ao.transname =$window.localStorage.trans;
           var json1 = JSON.stringify(ao);
-          console.log(ao.trans);
+          console.log(ao.transname);
             var deferred = $q.defer();
 
             $http({
@@ -343,6 +344,29 @@ angular.module('mytodoApp')
            });
           return deferred.promise;
      },
+      blog1: function () 
+        {
+           ao.token = $window.localStorage.tk;
+          var json1 = JSON.stringify(ao);
+          console.log(ao);
+            var deferred = $q.defer();
+
+           
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'comment/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(userData);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
       deletetrans: function () 
         {
            var deferred = $q.defer();
@@ -443,7 +467,7 @@ angular.module('mytodoApp')
         },
         edit: function(ao)
         {
-          
+         
           var json1 = JSON.stringify(ao);
           console.log(ao);
           var deferred = $q.defer();
@@ -542,7 +566,7 @@ angular.module('mytodoApp')
 
             $http({
                   method  : 'POST',
-                  url     : apiUrl+'rating/',
+                  url     : apiUrl+'rating2/',
                   data    : json1,
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {

@@ -25,6 +25,8 @@ angular.module('mytodoApp')
     	var ao = {};
 	    ao.transname = $scope.authorname;
 	    ao.rating= $scope.star;
+	    ao.trans_from= $scope.trans_from;
+	    ao.trans_to= $scope.trans_to;
 
 
 	     if (ao) {

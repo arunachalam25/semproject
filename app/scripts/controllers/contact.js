@@ -3,6 +3,7 @@
 angular.module('mytodoApp')
   .controller('contact', function ($scope,$location,dataservice) {
   	
+  $scope.v=false;
 $scope.details = function () {
 
 
@@ -22,7 +23,7 @@ $scope.details = function () {
 
   	$scope.contact = function () {
   		var ao = {};
-  	    
+  	    $scope.v= true;
 	    ao.from = $scope.from;
 	    ao.to = $scope.to;
 

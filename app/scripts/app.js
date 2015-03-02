@@ -60,10 +60,10 @@ angular
         templateUrl: 'views/rating.html',
         controller: 'author'
       })
-      .when('/signup', {
-        templateUrl: 'views/signup.html',
-        controller: 'adduser'
-      })
+      // .when('/signup', {
+      //   templateUrl: 'views/signup.html',
+      //   controller: 'adduser'
+      // })s
        .when('/signup1', {
         templateUrl: 'views/signup1.html',
         controller: 'adduser'
