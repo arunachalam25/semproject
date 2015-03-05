@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Translator Hub</title>
  
   
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -11,6 +11,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
       <link rel="stylesheet" href="styles/style.css">
+      
+
+    
     
     <!-- endbuild -->
   </head>
@@ -21,8 +24,8 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation"  style="background-color:#003399; layer-background-color:#003399; visibility: visible">
-        <div class="container">
+      <div class="navbar navbar-inverse" role="navigation"  style="background-color:transparent;border:none; ; visibility: visible">
+        <div class="container-fluid">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -32,7 +35,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand"  href="#/aboutus" ><font color="red">About Us</font></a>
+            <a class="navbar-brand"  href="#/aboutus" ><font color="black" size="5">About Us</font></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MainCtrl">
@@ -40,8 +43,8 @@
             <ul class="nav navbar-nav">
               
               
-              <li><a href="#/contactus"><font color="red" size="4">Contact Us</font></a></li>
-              <li ng-if="!vari"><a ng-click="logout()" href="#/"><font color="red" size="4">LogOut</span></font></a></li>
+              <li><a href="#/contactus"><font color="black" size="5">Contact </font></a></li>
+              <li ng-if="!vari"><a ng-click="logout()" href="#/"><font color="black" size="5">LogOut</span></font></a></li>
             </ul>
           </div>
         </div>
@@ -107,6 +110,7 @@
         <script src="scripts/controllers/contactus.js"></script>
         <script src="scripts/controllers/aboutus.js"></script>
          <script src="scripts/controllers/trans.js"></script>
+         <script src="scripts/rating.min.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,12 +1,11 @@
-   
-    <div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
-    <h2><b>Create Account:</b></h2>
+<div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: ; width: 500px; padding: 50px; color: black; border:; ">
+    <h2><b>Create Account:</b></h2><br>
     <form name="adduser1" ng-submit="adduser()">
     
     <!-- USERNAME -->
         <div class="form-group" ng-class="{ 'has-error' : adduser1.userName.$invalid && !adduser1.userName.$pristine }">
-          
-            <input type="text" name="userName" class="form-control"  ng-model="userName" ng-minlength="3" ng-maxlength="30" placeholder="Desired User Name" required >
+            <label><h4>UserName</h4></label>
+            <input type="text" name="userName" class="textbox4"  style="font-size:25px" ng-model="userName" ng-minlength="3" ng-maxlength="30"  required >
             <p ng-show="adduser1.userName.$error.minlength" class="help-block">Username is too short.</p>
             <p ng-show="adduser1.userName.$error.maxlength" class="help-block">Username is too long.</p>
         </div>
@@ -15,23 +14,27 @@
     <br><br> -->
      <!--    PASSWORD -->
         <div class="form-group" ng-class="{ 'has-error' : adduser1.userPass.$invalid && !adduser1.userPass.$pristine }">
-         
-            <input type="password" name="userPass" class="form-control" ng-model="userPass"  placeholder="PassWord" required >
+            <label><h4>Password</h4></label>
+            <input type="password" name="userPass" class="textbox4" style="font-size:25px" ng-model="userPass" required ng-minlength="8" ng-maxlength="15">
+            <p ng-show="adduser1.userPass.$error.minlength" class="help-block">Password is too short.</p>
+            <p ng-show="adduser1.userPass.$error.maxlength" class="help-block">Password is too long.</p>
+
+            
             
         </div>
     <!-- <input ng-model="userPass" type="password" placeholder="Password">
     <br><br> -->
     <!--    Userno -->
         <div class="form-group" ng-class="{ 'has-error' : adduser1.userno.$invalid && !adduser1.userno.$pristine }">
-            
-            <input type="number" name="userno" class="form-control" ng-model="userno" ng-minlength="10" ng-maxlength="10" placeholder="Mobile Number" required >
+            <label><h4>Mobile Number</h4></label>
+            <input type="tel" name="userno" class="textbox4" style="font-size:25px" ng-model="userno" ng-minlength="10" ng-maxlength="10" required >
             <p ng-show="adduser1.userno.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
             <p ng-show="adduser1.userno.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
         </div>
           <!-- EMAIL -->
         <div class="form-group" ng-class="{ 'has-error' : adduser1.email.$invalid && !adduser1.email.$pristine }">
-            
-            <input type="email" name="email" class="form-control" ng-model="email" placeholder="Email Address" required >
+            <label><h4>Email</h4></label>
+            <input type="email" id="inputEmail" name="email" class="textbox4" style="font-size:25px" ng-model="email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"  required >
             <p ng-show="adduser1.email.$invalid && !adduser1.email.$pristine" class="help-block">Enter a valid email.</p>
         </div>
     <!-- <input ng-model="userno" type="number" placeholder="Mobile Number">
@@ -44,7 +47,7 @@
         </div> -->
      <!-- <input ng-model="email" type="text" placeholder="email">
      <br><br> -->
-     <button type="submit" class="btn btn-primary">Submit</button>
+     <button type="submit" class="btn btn-primary btn-block btn-lg">Create</button>
     
         
     </form>

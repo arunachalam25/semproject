@@ -1,11 +1,5 @@
-<!-- <p><a class="btn btn-primary" href="#/signup1" > Add New user <span class="glyphicon glyphicon-user"></span></a></p>
-<p><a class="btn btn-primary" href="#/addauthor" > Add New Translator <span class="glyphicon glyphicon-user"></span></a></p>
-<p><a class="btn btn-success" href="#/edit" > Edit Translator Details <span class="glyphicon glyphicon-pencil"></span></a></p>
-<p><a class="btn btn-success" href="#/edituser" > Edit User Details <span class="glyphicon glyphicon-pencil"></span></a></p>
-<p><a class="btn btn-danger" href="#/deluser" > Remove User  <span class="glyphicon glyphicon-trash"></span></a></p>
-<p><a class="btn btn-danger" href="#/del" > Remove Translator <span class="glyphicon glyphicon-trash"></span></a></p>
 
- -->
+
 <style type="text/css">
  * {
     margin: 0;
@@ -17,28 +11,18 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #cccc33;
-    color: #cccc33;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    height: auto !important;
-    height: 100%;
-    min-height: 100%;
-    text-rendering: optimizeLegibility;
-}
 
-/*div.wrapper {
+
+div.wrapper {
   margin: 20px auto;
   width: 350px;
-}*/
+  height: 1000px;
+}
 
 p {
   font-family: georgia;
-  font-size: 1rem;
-  line-height: 25px;
+  font-size: 1.5rem;
+  line-height: 50px;
   margin: 24px 0;
   text-align: center;
 }
@@ -112,28 +96,30 @@ nav.vertical {
                 color: rgb(255,255,255);
                 padding: 10px 0 10px 50px;
               }
+              
 </style>
+<div class="login1" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 80px; background-color: ; width: 400px; ;padding: 0px; color: black; border: ; ">
 <div class="wrapper" >
   <nav class="vertical">
     <ul>
       <li>
-        <a href="#/contact">Translator</a>
+        <a href="#/home"><p>Translator</p></a>
         <div>
           <ul>
-            <li><a href="#/addauthor">Add New Translator</a></li>
-            <li><a href="#/edit">Edit Translator Details</a></li>
-            <li><a href="#/del">Remove Translator</a></li>
+            <li><a href="#/addauthor"><p>Add New Translator</p></a></li>
+            <li><a href="#/edit"><p>Edit Translator Details</p></a></li>
+            <li><a href="#/del"><p>Remove Translator</p></a></li>
             
           </ul>
         </div>
       </li>
       <li>
-        <a href="#/contact">User</a>
+        <a href="#/home"><p>User</p></a>
         <div>
           <ul>
-            <li><a href="#/signup1">Add New User</a></li>
-            <li><a href="#/edituser">Edit User Details</a></li>
-            <li><a href="#/deluser">Remove User </a></li>
+            <li><a href="#/signup1"><p>Add New User</p></a></li>
+            <li><a href="#/edituser"><p>Edit User Details</p></a></li>
+            <li><a href="#/deluser"><p>Remove User </p></a></li>
           </ul>
         </div>
       </li>
@@ -142,3 +128,33 @@ nav.vertical {
   </nav>
   
 </div>
+</div>
+<div ng-show="!v" class="login" id="login" style="z-index: 2; position: absolute; left: 420px; right: 50px; top: 50px; background-color: #C8C8C; width: 900px; padding: 30px; color: black; border: ; ">
+
+        <div ng-controller="contact">
+
+
+
+      <div data-ng-init="details()">
+       
+      
+       <div class="ui grid" ng-repeat="entry in collection1">
+                <div class="ten wide column"><h3><b>{{entry.trans_name}}</b></h3><h4><b>Translator ID: {{entry.id}}</b></h4><h4><span class="glyphicon glyphicon-phone"></span><b> {{entry.trans_number}}</b><br>
+                <span class="glyphicon glyphicon-envelope"></span><b> {{entry.trans_email}}</b></h4><hr></div>
+                
+                <div class="four wide column"><h3><b>Translation:</b></h3>  <h4><b> {{entry.trans_from}} - {{entry.trans_to}}</b></h4> 
+
+                
+                </div>
+
+          
+
+      </div>
+    </div>
+</div>
+<!-- <div class="login" id="login" style="z-index: 2; position: absolute; left: 933px auto; right: 0px; top: 100px; background-color: ; width: 300px; height: 600px; padding: 0px; color: black; border:; ">
+<a class="twitter-timeline" href="https://twitter.com/hashtag/translators" data-widget-id="572373836926943232">#translators Tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+     
+
+     </div> -->

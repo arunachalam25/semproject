@@ -1,59 +1,61 @@
-<html ng-app="mytodoApp">
 <style type="text/css">
-    .divider{
-    position:absolute;
-    left:50%;
-    top:10%;
-    bottom:10%;
-    border-left:1px solid white;
-}
+    hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
 </style>
+<html ng-app="mytodoApp">
 
-<div ng-show="!v" class="login" id="login" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: #cccc33; width: 730px; padding: 30px; color: black; border: #0000cc 2px dashed; ">
+<div ng-show="!v" class="login" id="login" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: ; width: 730px;  padding: 30px; color: black; border:; ">
 
         <div ng-controller="contact">
 
-
-
 			<div data-ng-init="details()">
-			 <!-- <div class="ui grid">
-	           <div class="four wide column"> Name</div>
-                <div class="four wide column">From</div>
-                <div class="four wide column"> To</div>
-                <div class="four wide column"> Address</div>
-             </div> -->
-			
+
 			 <div class="ui grid" ng-repeat="entry in collection1">
-                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3>Mobile:{{entry.trans_number}}</div>
-                <div class="four wide column"><h3><b>Translation:</b></h3> {{entry.trans_from}} - {{entry.trans_to}} </div>
-                
+                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3><h4><span class="glyphicon glyphicon-phone"></span><b> {{entry.trans_number}}</b></h4><h4><span class="glyphicon glyphicon-envelope"></span><b> {{entry.trans_email}}</b></h4></div>
+                <div class="four wide column"><h3><b>Translation:</b></h3><h4>{{entry.trans_from}} - {{entry.trans_to}}</h4> </div><hr>
+
                 </div>
 
     			
 
 			</div>
 		</div>
+      <!--   <nav>
+  <ul class="pager">
+    <li class="previous"><a href="#/home"><span aria-hidden="true">&larr;</span> Older</a></li>
+    <li class="next"><a href="#/home">Newer <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav> -->
 </div>
-<div class="login1" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 100px; background-color: #cccc33; width: 300px; height: 600px;padding: 20px; color: black; border: #0000cc 2px dashed; ">
+
+<div class="login1" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 100px; background-color: ; width: 300px; height: 600px;padding: 20px; color: black; border:; ">
 	
     <form name="contact1" ng-submit="contact()">
 			
         <div class="form-group" ng-class="{ 'has-error' : contact1.from.$invalid && !contact1.from.$pristine }">
         <h3><b>Language:</b></h3>
-        <input type="text" name="from" class="form-control"  ng-model="from"  placeholder="From" required >
+        <label><h4>From</h4></label>
+        <input type="text" name="from" class="textbox1" style="font-size:25px"  ng-model="from"   required >
             
         </div>
         <div class="form-group" ng-class="{ 'has-error' : contact1.to.$invalid && !contact1.to.$pristine }">
-            
-            <input type="text" name="to" class="form-control"  ng-model="to" placeholder="To" required >
+            <label><h4>To</h4></label>
+            <input type="text" name="to" class="textbox1" style="font-size:25px"  ng-model="to"  required >
             
         </div>
 			
-            <button type="submit" class="btn btn-success ">Search<span class="glyphicon glyphicon-search"></span></button><br><br>
+            <button type="submit" class="btn btn-success btn-block btn-lg "><span class="glyphicon glyphicon-search"></span> Search</button><br><br>
 		
 
-	<a class="btn btn-danger" href="#/blog" > Review <span class="glyphicon glyphicon-plus"></span></a><br><br>
-	<a class="btn btn-danger" href="#/rating" > Rate <span class="glyphicon glyphicon-star"></span></a>
+	<a class="btn btn-danger btn-block btn-lg" href="#/blog" ><span class="glyphicon glyphicon-plus"></span> Review </a><br><br>
+	<a class="btn btn-danger btn-block btn-lg" href="#/rating" ><span class="glyphicon glyphicon-star"></span> Rate </a>
 		
 		
 		</form>
@@ -62,19 +64,14 @@
 
 		
 </div>
-<div  ng-show="v" class="login2" id="login2" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: #cccc33; width: 730px; padding: 30px; color: black; border: #0000cc 2px dashed; ">
+<div  ng-show="v" class="login2" id="login2" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color:; width: 730px; padding: 30px; color: black; border: ; ">
 			<div ng-controller="contact">
     			
-			<!--  <div class="ui grid">
-	           <div class="five wide column"> Name</div>
-                <div class="two wide column">From</div>
-                <div class="two wide column"> To</div>
-                <div class="six wide column"> Address</div>
-                <div class="one wide column"> Rating</div>
-            </div> -->
+			
 			<div class="ui grid" ng-repeat="entry in collection">
-                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3>Mobile:{{entry.trans_number}}<b>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></div>
-                <div class="four wide column"><h3><b>Translation:</b></h3> {{entry.trans_from}} - {{entry.trans_to}} </div>
+                <div class="ten wide column"><h3><b> {{entry.trans_name}}</b></h3><h4><span class="glyphicon glyphicon-phone"></span> <b>{{entry.trans_number}}</b></h4><h4><span class="glyphicon glyphicon-envelope"></span> {{entry.trans_email}}</h4><h4>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></h4></div>
+                <div class="four wide column">
+                <h3><b>Translation:</b></h3><h4> {{entry.trans_from}} - {{entry.trans_to}}</h4></div>
                 <!-- <div class="two wide column">{{entry.trans_from}}</div>
                 <div class="two wide column"> {{entry.trans_to}}</div>
                 <div class="five wide column"> {{entry.trans_address}}</div> -->
@@ -84,7 +81,7 @@
 	       </div>
 
 </div>
-<div class="login" id="login" style="z-index: 2; position: absolute; left: 933px auto; right: 0px; top: 100px; background-color: #cccc33; width: 300px; height: 600px; padding: 0px; color: black; border: #0000cc 2px dashed; ">
+<div class="login" id="login" style="z-index: 2; position: absolute; left: 933px auto; right: 0px; top: 100px; background-color:; width: 300px; height: 600px; padding: 0px; color: black; border: ; ">
 <a class="twitter-timeline" href="https://twitter.com/hashtag/translators" data-widget-id="572373836926943232">#translators Tweets</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
      

@@ -13,6 +13,7 @@ angular.module('mytodoApp')
     var trans = null;
     var id = null;
     var apiUrl = 'http://anirudhram.pythonanywhere.com/';
+    // var apiUrl = 'http://10.0.1.7:8081/';
     return {
          
         login: function(uo)
@@ -83,7 +84,7 @@ angular.module('mytodoApp')
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {
                     authortrans = userData;
-                    console.log(userData.trans_name);
+                    console.log(userData);
                     deferred.resolve(authortrans);
 
               }).error(function(error) {
@@ -100,7 +101,29 @@ angular.module('mytodoApp')
 
             $http({
                   method  : 'POST',
-                  url     : apiUrl+'edittrans/',
+                  url     : apiUrl+'edittransfortrans/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authortrans = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+        savepass: function(ao)
+        {
+          ao.username =$window.localStorage.trans;
+          var json1 = JSON.stringify(ao);
+          console.log(ao.transname);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'changepassword/',
                   data    : json1,
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {
@@ -210,7 +233,7 @@ angular.module('mytodoApp')
 
             $http({
                   method  : 'POST',
-                  url     : apiUrl+'savetrans/',
+                  url     : apiUrl+'savetransfortrans/',
                   data    : json1,
                   headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
               }).success(function(userData) {
@@ -278,7 +301,7 @@ angular.module('mytodoApp')
 
          $http({
               method: 'Get',
-              url:  apiUrl+'displayall/',
+              url:  apiUrl+'displayname/',
           }).success(function (userData) {
               authors = userData;
               console.log(userData);
@@ -328,11 +351,33 @@ angular.module('mytodoApp')
      },
      details: function () 
         {
+            
            var deferred = $q.defer();
+
 
          $http({
               method: 'Get',
               url:  apiUrl+'displayall/',
+          }).success(function (userData) {
+
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(userData);
+
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     details1: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displaycomments/',
           }).success(function (userData) {
               authors = userData;
               console.log(userData);

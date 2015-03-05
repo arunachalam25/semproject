@@ -23,7 +23,7 @@ angular
         templateUrl: 'views/signup.html',
         controller: 'adduser'
       })
-      .when('/contact', {
+      .when('/home', {
         templateUrl: 'views/contact.html',
         controller: 'contact'
       })

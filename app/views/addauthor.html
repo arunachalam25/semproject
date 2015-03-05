@@ -1,10 +1,10 @@
- <div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+ <div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: ; width: 500px; padding: 50px; color: black; border: ; ">
 <form ng-submit="addauthor()" name="addauthor1">
 <h2>Add Translator:</h2>
 <!-- Trans Name -->
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.name.$invalid && !addauthor1.name.$pristine }">
             
-            <input type="text" name="name" class="form-control"  ng-model="name"  placeholder="Translator Name" required >
+            <input type="text" name="name" class="form-control input-lg"  ng-model="name"  placeholder="Translator Name" required >
            
         </div>
 <!-- <input class="form-control" ng-model="name" type="text" placeholder="Name"><br> -->
@@ -12,13 +12,13 @@
 <!-- Address -->
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.address.$invalid && !addauthor1.address.$pristine }">
             
-            <input type="text" name="address" class="form-control"  ng-model="address"  placeholder="Address" required >
+            <input type="text" name="address" class="form-control input-lg"  ng-model="address"  placeholder="Address" required >
            
         </div>
  <!--    Phone Number -->
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.phonenumber.$invalid && !addauthor1.phonenumber.$pristine }">
             
-           <input type="number" name="phonenumber" class="form-control" ng-model="phonenumber" ng-minlength="10" ng-maxlength="10" placeholder="Mobile Number" required >
+           <input type="tel" name="phonenumber" class="form-control input-lg" ng-model="phonenumber" ng-minlength="10" ng-maxlength="10" placeholder="Mobile Number" required >
             <p ng-show="addauthor1.phonenumber.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
             <p ng-show="addauthor1.phonenumber.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
         </div>
@@ -27,15 +27,15 @@
  <!-- EMAIL -->
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.email.$invalid && !addauthor1.email.$pristine }">
             
-            <input type="email" name="email" class="form-control" ng-model="email" placeholder="Email Address" required >
+            <input type="email" name="email" class="form-control input-lg" ng-model="email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="Email Address" required >
             <p ng-show="addauthor1.email.$invalid && !addauthor1.email.$pristine" class="help-block">Enter a valid email.</p>
         </div>
 <!-- <input class="form-control" ng-model="from" type="text" placeholder="From"><br> -->
 <!-- From-->
-       <label><b>Language: </b></label>
+       <label><h3><b>Language: </b></h3></label>
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.from.$invalid && !addauthor1.from.$pristine }">
             
-            <input type="text" name="from" class="form-control"  ng-model="from"  placeholder="From" required >
+            <input type="text" name="from" class="form-control input-lg"  ng-model="from"  placeholder="From" required >
            
         </div>
 <!-- <input class="form-control" ng-model="to" type="text" placeholder="To"><br> -->
@@ -43,9 +43,9 @@
       
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.to.$invalid && !addauthor1.to.$pristine }">
             
-            <input type="text" name="to" class="form-control"  ng-model="to"  placeholder="To" required >
+            <input type="text" name="to" class="form-control input-lg"  ng-model="to"  placeholder="To" required >
            
         </div>
-<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-ok"></span> Submit</button>
 </form>
 </div>

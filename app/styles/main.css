@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin';
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 /*
  * # Semantic UI - 1.10.2
  * https://github.com/Semantic-Org/Semantic-UI
@@ -69,8 +69,12 @@ html {
  */
 
 body {
-  background-color: #cccc33;
-  margin: 0;
+font-family: 'Quicksand', sans-serif;
+ background: -webkit-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* W3C */
 }
 
 /* HTML5 display definitions
@@ -261,10 +265,7 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
+
 
 /**
  * Contain overflow in all browsers.
@@ -515,15 +516,16 @@ html {
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
-  min-width: 278px;
-  background:  #cccc33;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.33;
-  color: rgba(0, 0, 0, 0.8);
-  font-smoothing: antialiased;
+ background: -webkit-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%); /* W3C */
+  
+
+
+        
+
 }
 
 /*******************************
@@ -534,8 +536,8 @@ h1,
 h2,
 h4,
 h5 {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  line-height: 1.33em;
+  font-family: 'Quicksand', sans-serif;
+  line-height: em;
   margin: -webkit-calc(2rem -  0.165em ) 0em 1rem;
   margin: calc(2rem -  0.165em ) 0em 1rem;
   font-weight: bold;
@@ -544,21 +546,21 @@ h5 {
 
 h1 {
   min-height: 1rem;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 1.714rem;
+  font-size: 3rem;
 }
 
 h3 {
   
-  font-size: 1.28rem;
+  font-size: 2rem;
 }
 
 h4 {
-   color: #00ff00;
-  font-size: 1.071rem;
+   
+  font-size: 1.8rem;
 }
 
 h5 {
@@ -617,7 +619,51 @@ a:hover {
 }
 
 /* Form */
-
+.textbox { 
+    height: 30px; 
+    width: 405px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: darkred; 
+    outline:0; 
+  } 
+  .textbox1 { 
+    height: 30px; 
+    width: 300px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: darkred; 
+    outline:0; 
+  } 
+  .textbox2 { 
+    height: 30px; 
+    width: 250px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: darkred; 
+    outline:0; 
+  } 
+  .textbox3 { 
+    height: 30px; 
+    width: 50px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: darkred; 
+    outline:0; 
+  } 
+  .textbox4 { 
+    height: 30px; 
+    width: 400px; 
+    background-color: transparent;  
+    border-style: solid;  
+    border-width: 0px 0px 1px 0px;  
+    border-color: darkred; 
+    outline:0; 
+  } 
 textarea::-webkit-selection,
 input::-webkit-selection {
   background-color: rgba(100, 100, 100, 0.4);
@@ -667,7 +713,7 @@ input::selection {
   vertical-align: baseline;
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.6);
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 0em 0.25em 0em 0em;
   padding: 0.78571em 1.5em 0.78571em;
   text-transform: none;
@@ -4891,7 +4937,7 @@ i.flag.zimbabwe:before {
   margin: -webkit-calc(2rem -  0.165em ) 0em 1rem;
   margin: calc(2rem -  0.165em ) 0em 1rem;
   padding: 0em 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   line-height: 1.33em;
   text-transform: none;
@@ -5046,7 +5092,15 @@ h4.ui.header .sub.header {
 h5.ui.header .sub.header {
   font-size: 0.9285rem;
 }
-
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
 /*--------------
  Content Heading
 ---------------*/
@@ -9070,7 +9124,7 @@ img.ui.bordered.image {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
   line-height: 1.2142em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   padding: 0.67861em 1em;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -10789,7 +10843,7 @@ ol.ui.list ol,
 .ui.list > .item .header {
   display: block;
   margin: 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.8);
 }
@@ -13080,7 +13134,7 @@ ol.ui.horizontal.list li:before,
 /* Title */
 
 .ui.steps .step .title {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.0714em;
   font-weight: bold;
 }
@@ -13700,7 +13754,7 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="time"],
 .ui.form input[type="text"],
 .ui.form input[type="url"] {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
@@ -18463,7 +18517,7 @@ ol.ui.horizontal.list li:before,
 
 .ui.message .header {
   display: block;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   margin: 0em 0em 0.5rem 0em;
 }
@@ -20499,7 +20553,7 @@ ol.ui.horizontal.list li:before,
 .ui.card > .content > .header {
   display: block;
   margin: 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: rgba(0, 0, 0, 0.85);
 }
 
@@ -22034,7 +22088,7 @@ a.ui.card:hover,
 .ui.items > .item > .content > .header {
   display: inline-block;
   margin: -0.165em 0em 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -22467,7 +22521,7 @@ a.ui.card:hover,
 
 .ui.statistics .statistic > .value,
 .ui.statistic > .value {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 4rem;
   font-weight: normal;
   line-height: 1em;
@@ -22482,7 +22536,7 @@ a.ui.card:hover,
 
 .ui.statistics .statistic > .label,
 .ui.statistic > .label {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.4);
@@ -22869,7 +22923,7 @@ a.ui.card:hover,
 
 .ui.accordion .title:not(.ui) {
   padding: 0.5em 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.8);
 }
@@ -25085,7 +25139,7 @@ select.ui.dropdown {
 
 .ui.modal > .header {
   display: block;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05)) #ffffff;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.05)) #ffffff;
   margin: 0em;
@@ -25657,7 +25711,7 @@ a.ui.nag {
 
 .ui.popup > .header {
   padding: 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.125em;
   line-height: 1.2;
   font-weight: bold;
@@ -26824,7 +26878,7 @@ a.ui.nag {
 }
 
 .ui.search > .results .result .title {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.85);
@@ -26850,7 +26904,7 @@ a.ui.nag {
 }
 
 .ui.search > .results > .message .header {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.1428em;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.8);
@@ -27000,7 +27054,7 @@ a.ui.nag {
 .ui.category.search > .results .category > .name {
   width: 100px;
   background: #f0f0f0;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1em;
   float: 1em;
   float: left;
@@ -31704,7 +31758,7 @@ html.ios {
 .ui.form input[type="time"],
 .ui.form input[type="text"],
 .ui.form input[type="url"] {
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;

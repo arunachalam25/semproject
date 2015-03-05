@@ -2,8 +2,26 @@
 
 angular.module('mytodoApp')
   .controller('blog', function ($scope,$location,dataservice) {
+  	$scope.v=false;
+$scope.details = function () {
+
+
+	     
+	      dataservice.details1().then(
+	        function (userData) {
+	        	//obj = JSON.parse(userData);
+
+
+	        	$scope.collection3 = userData;
+	        },
+	        function (error) {
+	          $scope.contactError = error;
+	        }
+	      );
+	  };
   	$scope.blog = function () {
   		var ao = {};
+  		$scope.v= true;
   	    var obj;
 	    ao.name = $scope.name;
 	    ao.comment = $scope.comment;
@@ -36,24 +54,13 @@ angular.module('mytodoApp')
 	        function (error) {
 	          $scope.contactError = error;
 	        }
-	      );
-	  };
+	      
+	  );
 
-  $scope.blog1 = function () {
-  		
-	    
-	      dataservice.blog1().then(
-	        function (userData) {
-	        	//obj = JSON.parse(userData);
-
-
-	        	$scope.collection1 = userData;
-	        },
-	        function (error) {
-	          $scope.contactError = error;
-	        }
-	      );
-	    } 
-  
-  
+	  }
 });
+
+ 
+	       
+  
+  

@@ -2,7 +2,11 @@
 
 angular.module('mytodoApp')
   .controller('author', function ($scope,$location,dataservice) {
-  
+  $('.ui.rating')
+  .rating({
+    rating: 3,
+    maxRating: 5
+  })
 
   	$scope.author = function () {
 

@@ -1,32 +1,45 @@
 <div ng-controller="trans">
-<div class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+<div ng-show="!v" class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: ; width: 500px; padding: 50px; color: black; border: ; ">
 <h2><b>Edit Your Profile</b></h2>
 
 <div data-ng-init="transdet()">
 
 <form ng-submit="save2()" name="addauthor1">
-			<br><label><b>Your Name:</b></label>
-  			<input class="form-control" ng-model="collection1[0].trans_name" type="text" readonly="readonly" ><h6>You Cant Change Your Name</h6><br>
+			<br><label><h3><b>Your Name:</b></h3></label>
+  			<input class="form-control input-lg" ng-model="collection1[0].trans_name" type="text" readonly="readonly" ><h5>*You Cant Change Your Name</h5><br>
 
-  			<br><label><b>Mobile Number:</b></label>
+  			<br><label><h3><b>Mobile Number:</b></h3></label>
 
-  			 <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_number.$invalid && !addauthor1.trans_number.$pristine }">
-  			<input type="text" class="form-control" ng-model="collection1[0].trans_number"  minlength="10" ng-maxlength="10">
+  			 <div  class="form-group" ng-class="{ 'has-error' : addauthor1.trans_number.$invalid && !addauthor1.trans_number.$pristine }">
+  			<input type="text" class="form-control input-lg" ng-model="collection1[0].trans_number"  minlength="10" ng-maxlength="10">
   			<p ng-show="adduser2.userno.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
             <p ng-show="adduser2.userno.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
             </div>
   			
      <br>
-  			<br><label><b>Address:</b></label>
-  			<input class="form-control" ng-model="collection1[0].trans_address"  type="text" required><br>
-  			<br><label><b>Language:</b></label>
-  			<br><label>From:</label>
-  			<input class="form-control" ng-model="collection1[0].trans_from"  type="text"
-  			required ><br>
-  			<br><label>To:</label>
-  			<input class="form-control" ng-model="collection1[0].trans_to"  type="text" required ><br>
+  			<br><label><h3><b>Address:</b></h3></label>
+  			<input class="form-control input-lg" ng-model="collection1[0].trans_address"  type="text" required><br>
+  			<!-- EMAIL -->
+        <br><label><h3><b>Email ID:</b></h3></label>
+        <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_email.$invalid && !adduser1.email.$pristine }">
+            
+            <input type="email" name="email" class="form-control input-lg" ng-model="collection1[0].trans_email" required >
+            <p ng-show="addauthor1.trans_email.$invalid && !addauthor1.trans_email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
   			
-    	<button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-disk"></span>  Save The Changes </button>			
-	</div>
-</form>
+  			
+    	<br><button type="submit" class="btn btn-primary btn-block btn-lg" ><span class="glyphicon glyphicon-floppy-disk "></span>  Save The Changes </button>	</form>		
+      <br><button class="btn-danger btn-block btn-lg" ng-click="pass()" >Change Password  </button>	
+  </div>
+</div>
+<div ng-show="v" class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: ; width: 500px; padding: 50px; color: black; border:; ">
+<form name="pass1" ng-submit="savepass()">
+     <!--    PASSWORD -->
+        <div class="form-group" ng-class="{ 'has-error' : pass1.password.$invalid && !pass11.password.$pristine }">
+         
+            <input type="password" name="password" class="form-control input-lg" ng-model="password"  placeholder="Enter New PassWord" required >
+            <br><button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+            
+        </div>
+        </form>
 </div>

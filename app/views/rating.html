@@ -1,49 +1,50 @@
-<div class="rating" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 100px; background-color: #cccc33; width: 300px; height: 600px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+<div class="rating" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 100px; background-color: width: 300px; height: 600px; padding: 50px; color: black; border: ">
 <form ng-submit="rating()" name="addauthor1">
 	
 		<div data-ng-init="author()">
 		<h2>Rate Your Favourite</h2>
 					
-						<label><b>Translator Name: </b></label>
-					<select ng-model = "authorname" class="form-control" >
+						<label><h3><b>Translator Name: </b></h3></label>
+					<select ng-model = "authorname" class="textbox2" style="font-size:18px" >
 
 						<option value="authorname">-- Select Persons --</option>
-						<option data-ng-repeat="entry in collection" value="{{entry.trans_name}}">{{entry.trans_name}}</option>
+						<option data-ng-repeat="entry in collection" value="{{entry.trans_name}}"><b>{{entry.trans_name}}</b></option>
 					</select><br><br>
 		<!-- From-->
-       <label><b>Language: </b></label>
+       <label><h3><b>Language: </b></h3></label>
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_from.$invalid && !addauthor1.trans_from.$pristine }">
-            
-            <input type="text" name="trans_from" class="form-control"  ng-model="trans_from"  placeholder="From" required >
+            <label><h4><b>From</b></h4></label>
+            <input type="text" name="trans_from" class="textbox2" style="font-size:25px" ng-model="trans_from"  required >
            
         </div>
 
 <!-- To-->
       
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_to.$invalid && !addauthor1.trans_to.$pristine }">
-            
-            <input type="text" name="to" class="form-control"  ng-model="trans_to"  placeholder="To" required >
+            <label><h4><b>To</b></h4></label>
+            <input type="text" name="to" class="textbox2" style="font-size:25px" ng-model="trans_to"  required >
            
         </div>
-					<label><b>Rating/5: </b></label>
-					<select ng-model = "star" class="form-control" >
+                    <!-- <div class="ui star rating" data-rating="3"></div></div> -->
+					<label><h4><b>Rating: </b></h4></label>
+					<select ng-model = "star" class="textbox3" style="font-size:18px" >
 					
 					
-					    <option value="0">-- Select star --</option>
-						<option value="1">1 </option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
+					    <option value="0"><b>-- Select star --</b></option>
+						<option value="1"><b>1</b> </option>
+						<option value="2"><b>2</b></option>
+						<option value="3"><b>3</b></option>
+						<option value="4"><b>4</b></option>
+						<option value="5"><b>5</b></option>
 						
 						
-					</select><br>
+					</select><b>/5</b><br>
 
  
                
 	</div>
 
-			<button type="submit" class="btn btn-success" >Submit</button>
+			<button type="submit" class="btn btn-success btn-lg" >Submit</button>
 			</form>
 			</div>
 
@@ -52,7 +53,7 @@
 <div ng-controller="contact">
 
 
-<div class="login" id="login" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: #cccc33; width: 730px; padding: 30px; color: black; border: #0000cc 2px dashed; ">
+<div class="login" id="login" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color:; width: 730px; padding: 30px; color: black; border: ">
 
 <div ng-controller="contact">
 
@@ -68,8 +69,8 @@
 			
 			<div class="ui grid" ng-repeat="entry in collection1">
 
-                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3>Mobile:{{entry.trans_number}}<br>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></div>
-                <div class="four wide column"><h3><b>Translation</b></h3> {{entry.trans_from}} - {{entry.trans_to}} </div>
+                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3><h4>Mobile:{{entry.trans_number}}</h4><h4>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></h4></div>
+                <div class="four wide column"><h3><b>Translation</b></h3><h4>{{entry.trans_from}} - {{entry.trans_to}} </h4></div>
     <!-- <div class="four wide column"> {{entry.trans_name}}</div>
     <div class="four wide column">{{entry.trans_from}}</div>
     <div class="four wide column"> {{entry.trans_to}}</div>
@@ -87,7 +88,7 @@
 			</div>
 						</div>
 			</div>
-			<div class="login" id="login" style="z-index: 2; position: absolute; left: 933px auto; right: 0px; top: 100px; background-color: #cccc33; width: 300px; height: 600px; padding: 0px; color: black; border: #0000cc 2px dashed; ">
+			<div class="login" id="login" style="z-index: 2; position: absolute; left: 933px auto; right: 0px; top: 100px; background-color: ; width: 300px; height: 600px; padding: 0px; color: black; border: ; ">
 <a class="twitter-timeline" href="https://twitter.com/hashtag/translators" data-widget-id="572373836926943232">#translators Tweets</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
      

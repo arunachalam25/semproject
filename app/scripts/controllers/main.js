@@ -2,6 +2,12 @@
 
 angular.module('mytodoApp')
   .controller('MainCtrl', function ($scope,$location,dataservice) {
+  	$('.ui.rating')
+  .rating({
+    rating: 3,
+    maxRating: 5
+  })
+;
   	$scope.login = function () {
   		var uo = {};
 	    uo.username = $scope.userName;
@@ -31,7 +37,7 @@ angular.module('mytodoApp')
 	        	if(userData.status =='Done')
 	        	{
 	        		
-	        		$location.path('/contact');
+	        		$location.path('/home');
 	        	}
 	        	
 	         

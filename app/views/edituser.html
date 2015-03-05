@@ -1,9 +1,9 @@
-<div class="login" id="login" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
+<div class="login" id="login" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color:; width: 500px; padding: 50px; color: black; border:; ">
 <h2><b>Edit User:</b></h2>
 <form ng-submit="edit1()" class="form-inline">
 	
 		<div data-ng-init="edituser()">
-					<b>Select User:</b> <select ng-model = "username" class="form-control" >
+					<h3><b>Select User:</b></h3> <select ng-model = "username" class="form-control input-lg" >
 						<option  value="username">-- Select Persons --</option>
 						<option data-ng-repeat="entry in collection" value="{{entry.username}}">{{entry.username}}</option>
 					</select>
@@ -18,15 +18,15 @@
 	
 <div ng-controller="edit1">
 <form ng-submit="save1()">
-			<br><label><b>User Name:</b></label>
-  			<br><input class="form-control" ng-model="collection1[0].username" type="text"
+			<br><h3><label><b>User Name:</b></h3></label>
+  			<br><input class="form-control input-lg" ng-model="collection1[0].username" type="text"
   			><br>
-  			<br><label><b>Mobile Number:</b></label>
-  			<input class="form-control" ng-model="collection1[0].phonenumber"  type="text" ><br>
-  			<br><label><b>Email ID:</b></label>
-  			<input class="form-control" ng-model="collection1[0].email"  type="text" ><br>
+  			<br><h3><label><b>Mobile Number:</b><h3></label>
+  			<input class="form-control input-lg" ng-model="collection1[0].phonenumber"  type="text" ><br>
+  			<br><h3><label><b>Email ID:</b></label></h3>
+  			<input class="form-control input-lg" ng-model="collection1[0].email"  type="text" ><br>
   			
-    	<button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-disk"></span>  Save The Changes </button>		
+    	<button type="submit" class="btn btn-primary btn-block btn-lg" ><span class="glyphicon glyphicon-floppy-disk"></span>  Save The Changes </button>		
 	</div>
 </form>
 </div>

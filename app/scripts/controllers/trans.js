@@ -3,7 +3,40 @@
 angular.module('mytodoApp')
   .controller('trans', function ($scope,$location,dataservice) {
   	
+  	 $scope.v=false;
+  	$scope.pass = function () {
+			$scope.v= true;
+	     
+	      
+	  },
 
+	  $scope.savepass = function () {
+  		var ao = {};
+	    
+	    ao.password = $scope.password;
+
+	    if (ao) {
+	      dataservice.savepass(ao).then(
+	        function (userData) {
+	     
+	        	if(userData.status =='Done')
+	        	{
+	        		alert('password Changed');
+	        		$location.path('/');
+	        	}
+	        	
+	         
+	        },
+	        function (error) {
+	          $scope.loginError = error;
+	        }
+	      );
+	    } 
+	    else {
+	      $scope.loginError = ' password required';
+	    }
+
+  };
   	$scope.transdet = function () {
 			var ao = {};
 

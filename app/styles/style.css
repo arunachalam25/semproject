@@ -13,22 +13,22 @@ body {
 /*.header,*/
 .marketing,
 .footer {
-  padding-top: 700px;
-  padding-left: 15px;
+  padding-top: 3000px;
+  padding-left: 10px;
   padding-right: 15px;
 
 }
-.header{
+/*.header{
   color: #980000;
 
-}
+}*/
 
 /* Custom page header */
-.header {
+/*.header {
 
   border-bottom: 1px solid #980000  ;
   margin-bottom: 10px;
-}
+}*/
 /* Make the masthead heading the same height as the navigation */
 /*.header h3 {
   margin-top: 0;
@@ -46,8 +46,8 @@ body {
 
 .container-narrow > hr {
   margin: 30px 0;
-}*/
-
+}
+*/
 /* Main marketing message and sign up button */
 /*.jumbotron {
   text-align: left;

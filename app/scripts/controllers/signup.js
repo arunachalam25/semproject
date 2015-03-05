@@ -2,7 +2,9 @@
 
 angular.module('mytodoApp')
   .controller('adduser', function ($scope,$location,dataservice) {
-  	$scope.adduser = function () {
+  
+
+$scope.adduser = function () {
   		var ao = {};
   	    ao.username = $scope.userName;
   	    ao.password = $scope.userPass;

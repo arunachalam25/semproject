@@ -1,41 +1,32 @@
+<div class="login" id="login" style="z-index: 2; position: absolute; left: 633px auto; right: 433px; top: 100px ; background-color:  ; width: 500px; padding: 50px; color: black; ">
 
-<div class="login" id="login" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: #cccc33; width: 500px; padding: 50px; color: black; border: #0000cc 2px dashed; ">
-<h1>Welcome</h1>
+<h1>Welcome</h1><br>
 <form name="login1" ng-submit="login()">
 
-	<!-- <input ng-model="userName" type="text" placeholder="UserName">
-	<br><br>
-	<input ng-model="userPass" type="password" placeholder="Password">
-	<br><br>
-	 -->
-	 <!-- USERNAME -->
+	
         <div class="form-group " ng-class="{ 'has-error' : login1.userName.$invalid && !login1.userName.$pristine }">
+            <h4><label>UserName</label></h4>
+            <input type="text" name="userName"  class="textbox" style="font-size:25px" ng-model="userName" required />
             
-            <input type="text" name="userName"  class="form-control" ng-model="userName" ng- placeholder="User Name" required />
             
         </div>          
             <!-- PASSWORD -->
         <div class="form-group" ng-class="{ 'has-error' : login1.userPass.$invalid && !login1.userPass.$pristine }">
+            <h4><label>Password</label></h4>
+            <input type="password" name="userPass" class=" textbox" style="font-size:25px" ng-model="userPass" required />
             
-            <input type="password" name="userPass" class="form-control" ng-model="userPass"  placeholder="password" required />
             
         </div>
-  <!--     </div> -->
-	<!-- <div type="submit" id="login-button" class="ui green submit labeled icon button">
-    <i class="sign in icon"><button type="submit"> LogIn</i> 
-</div> -->
+ 
 
-	<button type="submit" class="btn btn-success" >Sign In  <span class="glyphicon glyphicon-log-in"></span></button>
-	<br><br><p><a  href="#/fp" > Forgot Password </a></p>
-	<p><a class="btn btn-danger" href="#/signup" > New User SignUp <span class="glyphicon glyphicon-user"></span></a></p>
+	<button type="submit" class="btn btn-success btn-block btn-lg" ><span class="glyphicon glyphicon-log-in"></span>  Sign In  </button>
+	<p><a  href="#/fp" ><h4> Forgot Password </h4></a></p><br>
+	<p><a class="btn btn-danger btn-block btn-lg" href="#/signup" ><span class="glyphicon glyphicon-user"></span> New User SignUp </a></p>
+
 </form>
 </div>
-<div class="login" id="login" style="z-index: 2; position: absolute; left: 833px auto; right: 100px; top: auto; background-color: #cccc33; width: 300px; height: 600px; padding: 0px; color: black; border: #0000cc 2px dashed; ">
-<a class="twitter-timeline" href="https://twitter.com/hashtag/translators" data-widget-id="572373836926943232">#translators Tweets</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-     
 
-     </div>
+
 
 
 
