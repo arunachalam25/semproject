@@ -8,6 +8,12 @@ angular.module('mytodoApp')
     maxRating: 5
   })
 ;
+$scope.uname=localStorage.trans;
+	$scope.exist = function() {
+
+ $location.path('/aboutus');
+ };
+
   	$scope.login = function () {
   		var uo = {};
 	    uo.username = $scope.userName;
@@ -24,17 +30,17 @@ angular.module('mytodoApp')
 	        	}
 	        	if (userData.status =='translator')
 	        	{
-	        		alert("Hi");
+	        		
 					$location.path('/trans');
 	        	}
 	        	
 
 	        	if(userData.status =='admin')
 	        	{
-	        		alert("Hi Admin");
+	        		
 	        		$location.path('/admin');
 	        	}
-	        	if(userData.status =='Done')
+	        	if(userData.status =='user')
 	        	{
 	        		
 	        		$location.path('/home');
@@ -52,6 +58,7 @@ angular.module('mytodoApp')
 	    }
 
   };
+
   	$scope.vari1=localStorage.tk ;
  	if($scope.vari1 == 'undefined')
  		$scope.vari=true;
@@ -59,6 +66,7 @@ angular.module('mytodoApp')
  		$scope.vari=false;
  $scope.logout = function() {
  		localStorage.tk = 'undefined';
+ 		localStorage.trans = '';
  		window.location.reload();
 
  }

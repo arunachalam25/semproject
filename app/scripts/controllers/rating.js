@@ -24,6 +24,22 @@ angular.module('mytodoApp')
 	        }
 	      );
 	  };
+	  $scope.rate = function () {
+
+
+	     
+	      dataservice.rate().then(
+	        function (userData) {
+	        	//obj = JSON.parse(userData);
+
+
+	        	$scope.collection3 = userData;
+	        },
+	        function (error) {
+	          $scope.contactError = error;
+	        }
+	      );
+	  };
 
     $scope.rating = function () {
     	var ao = {};

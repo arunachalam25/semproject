@@ -11,14 +11,16 @@
 </style>
 <html ng-app="mytodoApp">
 
+
 <div ng-show="!v" class="login" id="login" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color: ; width: 730px;  padding: 30px; color: black; border:; ">
 
         <div ng-controller="contact">
 
 			<div data-ng-init="details()">
 
-			 <div class="ui grid" ng-repeat="entry in collection1">
-                <div class="eleven wide column"><h3><b> {{entry.trans_name}}</b></h3><h4><span class="glyphicon glyphicon-phone"></span><b> {{entry.trans_number}}</b></h4><h4><span class="glyphicon glyphicon-envelope"></span><b> {{entry.trans_email}}</b></h4></div>
+
+			<div class="ui grid" ng-repeat="entry in collection1">
+                <div class="eleven wide column"><h3><b>{{entry.trans_name}}</b></h3><h4><span class="glyphicon glyphicon-phone"></span><b> {{entry.trans_number}}</b></h4><h4><span class="glyphicon glyphicon-envelope"></span><b> {{entry.trans_email}}</b></h4></div>
                 <div class="four wide column"><h3><b>Translation:</b></h3><h4>{{entry.trans_from}} - {{entry.trans_to}}</h4> </div><hr>
 
                 </div>
@@ -65,11 +67,12 @@
 		
 </div>
 <div  ng-show="v" class="login2" id="login2" style="z-index: 2; position: absolute; left: 320px; right: 50px; top: 100px; background-color:; width: 730px; padding: 30px; color: black; border: ; ">
+
 			<div ng-controller="contact">
     			
 			
 			<div class="ui grid" ng-repeat="entry in collection">
-                <div class="ten wide column"><h3><b> {{entry.trans_name}}</b></h3><h4><span class="glyphicon glyphicon-phone"></span> <b>{{entry.trans_number}}</b></h4><h4><span class="glyphicon glyphicon-envelope"></span> {{entry.trans_email}}</h4><h4>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></h4></div>
+                <div class="ten wide column"><h3><b>{{entry.trans_name}}</b></h3><h4><span class="glyphicon glyphicon-phone"></span> <b>{{entry.trans_number}}</b></h4><h4><span class="glyphicon glyphicon-envelope"></span> {{entry.trans_email}}</h4><h4>Rating:{{entry.ratevalue}}<span class="glyphicon glyphicon-star"></h4></div>
                 <div class="four wide column">
                 <h3><b>Translation:</b></h3><h4> {{entry.trans_from}} - {{entry.trans_to}}</h4></div>
                 <!-- <div class="two wide column">{{entry.trans_from}}</div>

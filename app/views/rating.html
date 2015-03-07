@@ -12,9 +12,15 @@
 					</select><br><br>
 		<!-- From-->
        <label><h3><b>Language: </b></h3></label>
+       <div data-ng-init="rate()">
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_from.$invalid && !addauthor1.trans_from.$pristine }">
             <label><h4><b>From</b></h4></label>
-            <input type="text" name="trans_from" class="textbox2" style="font-size:25px" ng-model="trans_from"  required >
+            <!-- <input type="text" name="trans_from" class="textbox2" style="font-size:25px" ng-model="trans_from"  required > -->
+            <select ng-model = "trans_from" class="textbox2" style="font-size:18px" >
+
+						<option value="trans_from">-- Select Persons --</option>
+						<option data-ng-repeat="entry in collection3" value="{{entry.trans_from}}"><b>{{entry.trans_from}}</b></option>
+					</select><br><br>
            
         </div>
 
@@ -22,8 +28,14 @@
       
         <div class="form-group" ng-class="{ 'has-error' : addauthor1.trans_to.$invalid && !addauthor1.trans_to.$pristine }">
             <label><h4><b>To</b></h4></label>
-            <input type="text" name="to" class="textbox2" style="font-size:25px" ng-model="trans_to"  required >
+            <!-- <input type="text" name="to" class="textbox2" style="font-size:25px" ng-model="trans_to"  required > -->
+            <select ng-model = "trans_to" class="textbox2" style="font-size:18px" >
+
+						<option value="trans_to">-- Select Persons --</option>
+						<option data-ng-repeat="entry in collection3" value="{{entry.trans_to}}"><b>{{entry.trans_to}}</b></option>
+					</select><br><br>
            
+        </div>
         </div>
                     <!-- <div class="ui star rating" data-rating="3"></div></div> -->
 					<label><h4><b>Rating: </b></h4></label>

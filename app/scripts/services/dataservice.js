@@ -313,6 +313,24 @@ angular.module('mytodoApp')
            });
           return deferred.promise;
      },
+      rate: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displaylang/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
         edittrans: function () 
         {
            var deferred = $q.defer();
@@ -359,6 +377,16 @@ angular.module('mytodoApp')
               method: 'Get',
               url:  apiUrl+'displayall/',
           }).success(function (userData) {
+            //    var ao = {};
+            // ao.authors = userData;
+            // ao.transname = $window.localStorage.trans;
+            // var json1 = JSON.stringify(ao);
+
+            //userData.push({"transname":$window.localStorage.trans});
+              // userData.transname=transname;
+              console.log(userData);
+              // console.log(ao.transname);
+              deferred.resolve(userData);
 
               authors = userData;
               console.log(userData);

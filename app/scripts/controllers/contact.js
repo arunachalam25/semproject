@@ -1,7 +1,7 @@
   'use strict';
 
 angular.module('mytodoApp')
-  .controller('contact', function ($scope,$location,dataservice) {
+  .controller('contact', function ($scope,$location,dataservice,$window) {
   	
   	
   $scope.v=false;
@@ -12,9 +12,10 @@ $scope.details = function () {
 	     
 	      dataservice.details().then(
 	        function (userData) {
-	        	//obj = JSON.parse(userData);
+	        	
 
-
+	        	$scope.transname=$window.localStorage.trans;
+	        	
 	        	$scope.collection1 = userData;
 	        },
 	        function (error) {
@@ -33,6 +34,7 @@ $scope.details = function () {
 	      dataservice.contact(ao).then(
 	        function (authortrans) {
 	        	$scope.collection = authortrans;
+
 	        	
 	        	
 	         
