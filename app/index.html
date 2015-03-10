@@ -23,10 +23,10 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-inverse" role="navigation"  style="background-color:transparent;border:none; ; visibility: visible">
-        <div class="container-fluid">
-          <div class="navbar-header">
+    <div class="header"  style="z-index:999;">
+      <div class="navbar navbar-inverse" role="navigation"  style="background-color:#FFFFFF;border:none;">
+        <div class="container-fluid" >
+          <div class="navbar-header" >
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -35,9 +35,9 @@
               <span class="icon-bar"></span>
             </button>
 
-              <div ng-controller='MainCtrl' ng-show="!vari" style="position: absolute; left: 1150px; right: 0px; top: 0px;"><a class="navbar-brand"  href="" ><font color="black" size="5">Hi! {{uname}}</font></a>
+              <div ng-controller='MainCtrl' ng-show="!vari" style="position: absolute; left: 1150px; right: 0px; top: 0px; "><a class="navbar-brand"  href="#/editpro" ><font color="black" size="5">Hi! {{uname}}</font></a>
               </div>
-               
+          
             <a class="navbar-brand"  href="#/aboutus" ><font color="black" size="5">About Us</font></a>
           </div>
 
@@ -113,6 +113,7 @@
         <script src="scripts/controllers/contactus.js"></script>
         <script src="scripts/controllers/aboutus.js"></script>
          <script src="scripts/controllers/trans.js"></script>
+         <script src="scripts/controllers/editpro.js"></script>
          <script src="scripts/rating.min.js"></script>
         <!-- endbuild -->
 </body>

@@ -1,0 +1,38 @@
+<div ng-controller="pro">
+<div  class="signup" id="signup" style="z-index: 2; position: absolute; left: 533px auto; right: 533px; top: auto; background-color: ; width: 500px; padding: 50px; color: black; border: ; ">
+
+
+      <div data-ng-init="details5()">
+<form ng-submit="save5()" name="adduser">
+      <br><label><h3><b>Your Name:</b></h3></label>
+        <input class="form-control input-lg" ng-model="collection1[0].username" type="text" readonly="readonly" ><h5>*You Cant Change Your Name</h5><br>
+        <!--    Userno -->
+        <div class="form-group" ng-class="{ 'has-error' : adduser.phonenumber.$invalid && !adduser.phonenumber.$pristine }">
+            <label><h4>Mobile Number</h4></label>
+            <input type="tel" name="phonenumber"  class="form-control input-lg" style="font-size:25px" ng-model="collection1[0].phonenumber" ng-minlength="10" ng-maxlength="10" required >
+            <p ng-show="adduser.phonenumber.$error.minlength" class="help-block">Enter Valid Mobile Number</p>
+            <p ng-show="adduser.phonenumber.$error.maxlength" class="help-block">Enter Valid Mobile Number</p>
+        </div>
+
+     
+        
+     
+        <!-- EMAIL -->
+        <br><label><h3><b>Email ID:</b></h3></label>
+        <div class="form-group" ng-class="{ 'has-error' : adduser.email.$invalid && !adduser.email.$pristine }">
+            
+            <input type="email" name="email" class="form-control input-lg" ng-model="collection1[0].email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"  required >
+            <p ng-show="adduser.email.$invalid && !adduser.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+        
+        
+      <br><button type="submit" class="btn btn-primary btn-block btn-lg" ><span class="glyphicon glyphicon-floppy-disk "></span>  Save The Changes </button></form>   
+      <!-- <br><button class="btn-danger btn-block btn-lg" ng-click="pass()" >Change Password  </button>  -->
+  </div>
+</div>
+</div>
+
+        </form>
+
+</div>
+</div>

@@ -22,25 +22,25 @@ $scope.uname=localStorage.trans;
 	    if (uo) {
 	      dataservice.login(uo).then(
 	        function (userData) {
-	        	if (userData.status =='wrong')
+	        	if (userData.status1 =='wrong')
 	        	{
 
 	        		alert("Invalid Login");
 					$location.path('/main');
 	        	}
-	        	if (userData.status =='translator')
+	        	if (userData.status1 =='translator')
 	        	{
 	        		
 					$location.path('/trans');
 	        	}
 	        	
 
-	        	if(userData.status =='admin')
+	        	if(userData.status1 =='admin')
 	        	{
 	        		
 	        		$location.path('/admin');
 	        	}
-	        	if(userData.status =='user')
+	        	if(userData.status1 =='user')
 	        	{
 	        		
 	        		$location.path('/home');

@@ -23,6 +23,10 @@ angular
         templateUrl: 'views/signup.html',
         controller: 'adduser'
       })
+       .when('/editpro', {
+        templateUrl: 'views/editpro.html',
+        controller: 'pro'
+      })
       .when('/home', {
         templateUrl: 'views/contact.html',
         controller: 'contact'

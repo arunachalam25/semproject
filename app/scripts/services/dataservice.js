@@ -12,8 +12,8 @@ angular.module('mytodoApp')
     var user = null;
     var trans = null;
     var id = null;
-    var apiUrl = 'http://anirudhram.pythonanywhere.com/';
-    // var apiUrl = 'http://10.0.1.7:8081/';
+     var apiUrl = 'http://anirudhram.pythonanywhere.com/';
+    //var apiUrl = 'http://10.0.1.35:8081/';
     return {
          
         login: function(uo)
@@ -33,6 +33,7 @@ angular.module('mytodoApp')
                     console.log(userData);
                     $window.localStorage.tk = userData.token;
                     $window.localStorage.trans = userData.transname;
+                    $window.localStorage.status1 = userData.status1;
 
                      window.location.reload();
 
@@ -115,6 +116,28 @@ angular.module('mytodoApp')
               return deferred.promise;
         },
         savepass: function(ao)
+        {
+          ao.username =$window.localStorage.trans;
+          var json1 = JSON.stringify(ao);
+          console.log(ao.transname);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'changepassword/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authortrans = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+        savepass1: function(ao)
         {
           ao.username =$window.localStorage.trans;
           var json1 = JSON.stringify(ao);
@@ -246,6 +269,29 @@ angular.module('mytodoApp')
               });
               return deferred.promise;
         },
+         save5: function(ao)
+        {
+         
+          var json1 = JSON.stringify(ao);
+          console.log("hello");
+          console.log(ao);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'saveuserdet/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    console.log(userData.status);
+                    deferred.resolve(authenticatedauthor);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
         blog: function(ao)
         {
           ao.token = $window.localStorage.tk;
@@ -313,13 +359,49 @@ angular.module('mytodoApp')
            });
           return deferred.promise;
      },
+     //  rate: function () 
+     //    {
+     //       var deferred = $q.defer();
+
+     //     $http({
+     //          method: 'Get',
+     //          url:  apiUrl+'displaylang/',
+     //      }).success(function (userData) {
+     //          authors = userData;
+     //          console.log(userData);
+     //          deferred.resolve(authors);
+
+     //      }).error(function (error) {
+     //        deferred.error(error);
+           
+     //       });
+     //      return deferred.promise;
+     // },
       rate: function () 
         {
            var deferred = $q.defer();
 
          $http({
               method: 'Get',
-              url:  apiUrl+'displaylang/',
+              url:  apiUrl+'displayfrom/',
+          }).success(function (userData) {
+              authors = userData;
+              console.log(userData);
+              deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     rate1: function () 
+        {
+           var deferred = $q.defer();
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displayto/',
           }).success(function (userData) {
               authors = userData;
               console.log(userData);
@@ -399,6 +481,29 @@ angular.module('mytodoApp')
            });
           return deferred.promise;
      },
+     userdet: function(ao)
+        {
+          ao.username =$window.localStorage.trans;
+          ao.status =$window.localStorage.status1;
+          var json1 = JSON.stringify(ao);
+          console.log(ao.username);
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'edituserdet/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authortrans = userData;
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
      details1: function () 
         {
            var deferred = $q.defer();

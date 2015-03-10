@@ -13,22 +13,27 @@ body {
 /*.header,*/
 .marketing,
 .footer {
-  padding-top: 3000px;
+  padding-top: 800px;
   padding-left: 10px;
   padding-right: 15px;
 
 }
-/*.header{
-  color: #980000;
+.header{
+  position:fixed;
+  /*color: #980000;*/
 
-}*/
+}
 
 /* Custom page header */
-/*.header {
-
-  border-bottom: 1px solid #980000  ;
+.header {
+ position:fixed;
+  /*border-bottom: 1px solid #980000  ;*/
   margin-bottom: 10px;
-}*/
+  width: 100%;
+}
+
+
+
 /* Make the masthead heading the same height as the navigation */
 /*.header h3 {
   margin-top: 0;
