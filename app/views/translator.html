@@ -1,0 +1,58 @@
+
+<div class="trans" id="login1" style="z-index: 2; position: absolute; left: 20px; right: 1000px; top: 0px; background-color: width: 600px; height: 300px; padding: 50px; color: black; ">
+<form ng-submit="trans1()" name="translator">
+		<h3><b>Online Translator</b></h3>
+		<h4><b>From: </b></h4>
+					<select ng-model = "from" class="textbox1" style="font-size:18px" >
+					    <option value="0"><b>-- Select language --</b></option>
+						<option value="english"><b>english</b> </option>
+						<option value="french"><b>french</b></option>
+						<option value="german"><b>german</b></option>
+						<option value="spanish"><b>spanish</b></option>
+						<option value="portugese"><b>portugese</b></option>
+						<option value="dutch"><b>dutch</b></option>
+						<option value="estonian"><b>estonian</b></option>	
+					</select>
+					<h4><b>To: </b></h4>
+					<select ng-model = "to" class="textbox1" style="font-size:18px" >
+					<option value="0"><b>-- Select language --</b></option>
+						<option value="english"><b>english</b> </option>
+						<option value="french"><b>french</b></option>
+						<option value="german"><b>german</b></option>
+						<option value="spanish"><b>spanish</b></option>
+						<option value="portugese"><b>portugese</b></option>
+						<option value="dutch"><b>dutch</b></option>
+						<option value="estonian"><b>estonian</b></option>
+					
+					</select><br>
+					<label><h4><b>Enter Text to Translate: </b></h4></label>
+    <textarea ng-model="text" class="textarea" style="font-size:18px" cols="30" rows="10"></textarea><br>
+     <br><button type="submit" class="btn btn-success btn-block btn-lg"><span class="glyphicon glyphicon-ok"></span> Translate </button><br><br>
+     </form>
+     </div>
+    <!--  <div ng-show="!v" class="trans1" id="login5" style="z-index: 2; position: absolute; left: 333px auto; right: 10px; top: 100px; background-color: ; width: 700px; height: 600px; padding: 0px; color: black; border:dashed; ">
+     	<div ng-controller="translator"> 
+        
+        <br><label><h4><b>Translated Text:</b></h4></label>
+  			<br><textarea class="textbox2"  id="trans_name"  type="text" ></textarea><br>
+     </div> -->
+     <div ng-show="v" class="trans2" id="login5" style="z-index: 2; position: absolute; left: 333px auto; right: 10px; top: 250px; background-color: ; width: 700px; height: 400px; padding: 0px; color: black; border:; ">
+     	<div ng-controller="translator"> 
+        
+        <br><label><h4><b>Translated Text:</b></h4></label><br>
+  			<br><textarea class="textarea"  style="font-size:18px" cols="30" rows="10" ng-model="text1" id="trans_name" type="text" >{{text1}}</textarea><br>
+       
+     </div>
+    
+   
+
+ 
+ 
+ 
+ 
+ 
+  
+
+
+ 
+   

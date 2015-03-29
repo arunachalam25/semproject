@@ -13,7 +13,7 @@ angular.module('mytodoApp')
     var trans = null;
     var id = null;
      var apiUrl = 'http://anirudhram.pythonanywhere.com/';
-    //var apiUrl = 'http://10.0.1.35:8081/';
+    // var apiUrl = 'http://172.16.42.27:8081/';
     return {
          
         login: function(uo)
@@ -296,7 +296,7 @@ angular.module('mytodoApp')
         {
           ao.token = $window.localStorage.tk;
           var json1 = JSON.stringify(ao);
-          console.log(ao);
+          console.log(ao);          
             var deferred = $q.defer();
 
             $http({
@@ -315,6 +315,30 @@ angular.module('mytodoApp')
               });
               return deferred.promise;
         },
+        trans1: function(ao)
+        {
+          
+          var json1 = JSON.stringify(ao);
+          console.log(ao);          
+            var deferred = $q.defer();
+
+            $http({
+                  method  : 'POST',
+                  url     : apiUrl+'translang/',
+                  data    : json1,
+                  headers : { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' }
+              }).success(function(userData) {
+                    authenticatedauthor = userData;
+                    
+                    console.log(userData);
+                    deferred.resolve(userData);
+
+              }).error(function(error) {
+                    deferred.error(error);
+              });
+              return deferred.promise;
+        },
+
 
         adduser: function(ao)
         {
@@ -352,6 +376,25 @@ angular.module('mytodoApp')
               authors = userData;
               console.log(userData);
               deferred.resolve(authors);
+
+          }).error(function (error) {
+            deferred.error(error);
+           
+           });
+          return deferred.promise;
+     },
+     hi: function () 
+        {
+           var deferred = $q.defer();
+
+
+         $http({
+              method: 'Get',
+              url:  apiUrl+'displaycommentspolarity1/',
+          }).success(function (userData) {
+              
+              console.log(userData);
+              deferred.resolve(userData);
 
           }).error(function (error) {
             deferred.error(error);

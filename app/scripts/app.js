@@ -13,15 +13,30 @@ angular
     'ngAnimate',
     'ngRoute'
   ])
+
+  
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+     
       .when('/signup', {
         templateUrl: 'views/signup.html',
         controller: 'adduser'
+      })
+      .when('/hi', {
+        templateUrl: 'views/hi.html',
+        controller: 'hi'
+      })
+      .when('/translator', {
+        templateUrl: 'views/translator.html',
+        controller: 'translator'
+      })
+      .when('/graph', {
+        templateUrl: 'views/graph.html',
+        controller: 'graph'
       })
        .when('/editpro', {
         templateUrl: 'views/editpro.html',
